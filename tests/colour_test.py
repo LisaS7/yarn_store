@@ -11,3 +11,15 @@ class TestColour(unittest.TestCase):
 
     def test_colour_has_name(self):
         self.assertEqual(self.colour.name, "Caron Cakes")
+
+    def test_colour_has_hex_code(self):
+        self.assertEqual(self.colour.hex_code, "#111217")
+
+    def test_colour_has_stock_quantity(self):
+        self.assertEqual(self.colour.stock_quantity, 12)
+
+    def test_colour_has_yarn(self):
+        self.assertEqual(self.colour.yarn, self.yarn)
+
+    def test_colour_has_id(self):
+        self.assertEqual(self.colour.id, 3)
