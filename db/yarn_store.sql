@@ -13,8 +13,7 @@ CREATE TABLE manufacturers (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     last_payment_date DATE,
-    balance_due INT,
-    logo VARCHAR(255)
+    balance_due INT
 );
 
 CREATE TABLE yarns (
@@ -27,5 +26,6 @@ CREATE TABLE yarns (
     needle_size_mm INT,
     fibre_type VARCHAR(255),
     buy_cost INT,
-    sell_price INT
+    sell_price INT,
+    image VARCHAR(255)
 );
