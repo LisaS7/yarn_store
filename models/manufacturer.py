@@ -8,7 +8,6 @@ class Manufacturer:
     name: str
     last_payment_date: datetime
     balance_due: int
-    logo: str
     id: Optional[int] = None
 
     def format_currency_balance(self):

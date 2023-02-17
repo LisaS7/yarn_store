@@ -1,2 +1,23 @@
+from dataclasses import dataclass
+from models.manufacturer import Manufacturer
+from typing import Optional
+
+@dataclass
 class Yarn:
-    pass
+    name: str
+    manufacturer: Manufacturer
+    yarn_weight: str
+    ball_weight_grams: int
+    length_metres: int
+    needle_size_mm: int
+    fibre_type: str
+    buy_cost: int
+    sell_price: int
+    image: str
+    id: Optional[int] = None
+
+    def save_logo(self, image):
+        if not image:
+            image = "none.jpeg"
+        else:
+            image.save("./static/images/yarns/" + image.filename)
