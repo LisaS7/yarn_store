@@ -23,3 +23,7 @@ class TestColour(unittest.TestCase):
 
     def test_colour_has_id(self):
         self.assertEqual(self.colour.id, 3)
+
+    def test_increase_stock(self):
+        self.colour.increase_stock(5)
+        self.assertEqual(self.colour.stock_quantity, 17)

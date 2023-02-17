@@ -11,4 +11,4 @@ class Colour:
     id: Optional[int] = None
 
     def increase_stock(self, quantity):
-        self.stock += quantity
+        self.stock_quantity += quantity
