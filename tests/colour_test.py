@@ -1,13 +1,11 @@
 import unittest
 
-from models.colour import Colour
-from models.yarn import Yarn
+from tests.test_data import test_colour, test_yarn
 
 
 class TestColour(unittest.TestCase):
     def setUp(self):
-        self.yarn = Yarn()
-        self.colour = Colour("Caron Cakes", "#111217", 12, self.yarn, 3)
+        self.colour = test_colour
 
     def test_colour_has_name(self):
         self.assertEqual(self.colour.name, "Caron Cakes")
@@ -19,7 +17,7 @@ class TestColour(unittest.TestCase):
         self.assertEqual(self.colour.stock_quantity, 12)
 
     def test_colour_has_yarn(self):
-        self.assertEqual(self.colour.yarn, self.yarn)
+        self.assertEqual(self.colour.yarn, test_yarn)
 
     def test_colour_has_id(self):
         self.assertEqual(self.colour.id, 3)

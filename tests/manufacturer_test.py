@@ -1,10 +1,10 @@
 import unittest
-from models.manufacturer import Manufacturer
 from datetime import datetime as dt
+from tests.test_data import test_manufacturer
 
 class TestManufacturer(unittest.TestCase):
     def setUp(self):
-        self.manufacturer = Manufacturer("Caron", dt(2023, 1, 12), 10050, 2)
+        self.manufacturer = test_manufacturer
 
     def test_mfr_has_name(self):
         self.assertEqual(self.manufacturer.name, "Caron")
