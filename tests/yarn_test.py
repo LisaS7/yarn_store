@@ -1,10 +1,23 @@
+# REFERENCE: https://stackoverflow.com/questions/18249949/python-file-object-to-flasks-filestorage
+
 from werkzeug.datastructures import FileStorage
 import unittest
+import filecmp
+from pathlib import Path
 from tests.test_data import test_yarn, test_manufacturer
+
 
 class TestYarn(unittest.TestCase):
     def setUp(self):
         self.yarn = test_yarn
+        self.test_image_location = Path.cwd() / "tests" / "test_image.jpeg"
+        self.saved_image_location = (
+            Path.cwd() / "static" / "images" / "yarns" / "test_image.jpeg"
+        )
+
+    def tearDown(self):
+        if self.saved_image_location.exists():
+            self.saved_image_location.unlink()
 
     def test_yarn_has_name(self):
         self.assertEqual(self.yarn.name, "Caron Cakes")
@@ -39,3 +52,11 @@ class TestYarn(unittest.TestCase):
     def test_yarn_has_id(self):
         self.assertEqual(self.yarn.id, 7)
 
+    def test_save_image(self):
+        with open(self.test_image_location, "rb") as f:
+            image = FileStorage(f)
+            image.filename = "test_image.jpeg"
+            self.yarn.save_image(image)
+        self.assertTrue(
+            filecmp.cmp(self.test_image_location, self.saved_image_location)
+        )

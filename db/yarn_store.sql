@@ -23,7 +23,7 @@ CREATE TABLE yarns (
     yarn_weight VARCHAR(255),
     ball_weight_grams INT,
     length_metres INT,
-    needle_size_mm INT,
+    needle_size_mm DECIMAL,
     fibre_type VARCHAR(255),
     buy_cost INT,
     sell_price INT,
