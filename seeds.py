@@ -3,13 +3,23 @@ from models.colour import Colour
 from models.manufacturer import Manufacturer
 from datetime import datetime as dt
 
-# import repositories
+from repositories import manufacturer_repository, yarn_repository, colour_repository
 
-# respository.delete_all()
+manufacturer_repository.delete_all()
+yarn_repository.delete_all()
+colour_repository.delete_all()
+
+####----- MANUFACTURERS -----####
 
 caron = Manufacturer("Caron", dt(2023, 1, 5), 35000)
 cascade = Manufacturer("Cascade", dt(2022, 12, 15), 0)
 sirdar = Manufacturer("Sirdar", dt(2022, 6, 28), 57800)
+manufacturer_repository.save(caron)
+manufacturer_repository.save(cascade)
+manufacturer_repository.save(sirdar)
+
+
+####----- YARNS -----####
 
 sirdar_yarn1 = Yarn(
     "Hayfield",
@@ -71,24 +81,47 @@ cascade_yarn3 = Yarn(
     899,
     "cascade_superwash.jpeg",
 )
-
-sirdar_hayfield_colour1 = Colour("Cornish", "#EBE4CE", 18)
-sirdar_hayfield_colour2 = Colour("Oats", "#BD9C88", 3)
-sirdar_hayfield_colour3 = Colour("Forget Me Not", "#7691CC", 6)
-caron_cakes_colour1 = Colour("Faded Jeans", "#b3c1ca", 10)
-caron_cakes_colour1 = Colour("Sunny Day", "#fad193", 14)
-cascade_heritage_colour1 = Colour("Raspberry", "#c22a72", 22)
-cascade_heritage_colour2 = Colour("Royal", "#2863aa", 0)
-cascade_heritage_colour3 = Colour("Primavera", "#8cad52", 35)
-cascade_heritage_colour4 = Colour("Real Black", "#111111", 27)
-cascade_heritage_colour5 = Colour("Deep Ocean", "#28515e", 7)
-cascade_cantata_colour1 = Colour("Turquoise", "#52c4df", 30)
-cascade_cantata_colour2 = Colour("Plum", "#5c1d5d", 0)
-cascade_cantata_colour3 = Colour("Icy Grey", "#acb1bc", 5)
-cascade_cantata_colour4 = Colour("Clay", "#5e4d48", 28)
-cascade_superwash_colour1 = Colour("Turtle", "#7c7a47", 15)
-cascade_superwash_colour2 = Colour("Desert Sun", "#e37e28", 25)
-cascade_superwash_colour3 = Colour("Seafoam Heather", "98d1da", 32)
+yarn_repository.save(sirdar_yarn1)
+yarn_repository.save(caron_yarn1)
+yarn_repository.save(cascade_yarn1)
+yarn_repository.save(cascade_yarn2)
+yarn_repository.save(cascade_yarn3)
 
 
-# save objects
+####----- COLOURS -----####
+
+sirdar_hayfield_colour1 = Colour("Cornish", "#EBE4CE", 18, sirdar_yarn1)
+sirdar_hayfield_colour2 = Colour("Oats", "#BD9C88", 3, sirdar_yarn1)
+sirdar_hayfield_colour3 = Colour("Forget Me Not", "#7691CC", 6, sirdar_yarn1)
+caron_cakes_colour1 = Colour("Faded Jeans", "#b3c1ca", 10, caron_yarn1)
+caron_cakes_colour2 = Colour("Sunny Day", "#fad193", 14, caron_yarn1)
+cascade_heritage_colour1 = Colour("Raspberry", "#c22a72", 22, cascade_yarn1)
+cascade_heritage_colour2 = Colour("Royal", "#2863aa", 0, cascade_yarn1)
+cascade_heritage_colour3 = Colour("Primavera", "#8cad52", 35, cascade_yarn1)
+cascade_heritage_colour4 = Colour("Real Black", "#111111", 27, cascade_yarn1)
+cascade_heritage_colour5 = Colour("Deep Ocean", "#28515e", 7, cascade_yarn1)
+cascade_cantata_colour1 = Colour("Turquoise", "#52c4df", 30, cascade_yarn2)
+cascade_cantata_colour2 = Colour("Plum", "#5c1d5d", 0, cascade_yarn2)
+cascade_cantata_colour3 = Colour("Icy Grey", "#acb1bc", 5, cascade_yarn2)
+cascade_cantata_colour4 = Colour("Clay", "#5e4d48", 28, cascade_yarn2)
+cascade_superwash_colour1 = Colour("Turtle", "#7c7a47", 15, cascade_yarn3)
+cascade_superwash_colour2 = Colour("Desert Sun", "#e37e28", 25, cascade_yarn3)
+cascade_superwash_colour3 = Colour("Seafoam Heather", "98d1da", 32, cascade_yarn3)
+
+colour_repository.save(sirdar_hayfield_colour1)
+colour_repository.save(sirdar_hayfield_colour2)
+colour_repository.save(sirdar_hayfield_colour3)
+colour_repository.save(caron_cakes_colour1)
+colour_repository.save(caron_cakes_colour2)
+colour_repository.save(cascade_heritage_colour1)
+colour_repository.save(cascade_heritage_colour2)
+colour_repository.save(cascade_heritage_colour3)
+colour_repository.save(cascade_heritage_colour4)
+colour_repository.save(cascade_heritage_colour5)
+colour_repository.save(cascade_cantata_colour1)
+colour_repository.save(cascade_cantata_colour2)
+colour_repository.save(cascade_cantata_colour3)
+colour_repository.save(cascade_cantata_colour4)
+colour_repository.save(cascade_superwash_colour1)
+colour_repository.save(cascade_superwash_colour2)
+colour_repository.save(cascade_superwash_colour3)
