@@ -14,7 +14,7 @@ class Yarn:
     fibre_type: str
     buy_cost: int
     sell_price: int
-    image: str
+    image: Optional[str] = None
     id: Optional[int] = None
 
     def save_image(self, image):
