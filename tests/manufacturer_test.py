@@ -2,6 +2,7 @@ import unittest
 from datetime import datetime as dt
 from tests.test_data import test_manufacturer
 
+
 class TestManufacturer(unittest.TestCase):
     def setUp(self):
         self.manufacturer = test_manufacturer
@@ -11,7 +12,7 @@ class TestManufacturer(unittest.TestCase):
 
     def test_mfr_has_last_payment_date(self):
         self.assertEqual(self.manufacturer.last_payment_date, dt(2023, 1, 12))
-    
+
     def test_mfr_has_balance_due(self):
         self.assertEqual(self.manufacturer.balance_due, 10050)
 
@@ -20,3 +21,6 @@ class TestManufacturer(unittest.TestCase):
 
     def test_mfr_format_currency(self):
         self.assertEqual(self.manufacturer.format_currency_balance(), "£100.50")
+
+    def test_mfr_date_in_psql_format(self):
+        self.assertEqual(self.manufacturer.format_date_for_psql(), "2023-01-12")
