@@ -9,9 +9,8 @@ class Manufacturer:
     last_payment_date: datetime
     balance_due: int
     logo: str
+    id: Optional[int] = None
 
     def format_currency_balance(self):
-        pass
-
-    def save_logo(self):
-        pass
+        balance_in_pounds = self.balance_due / 100
+        return "£{0:,.2f}".format(balance_in_pounds)
