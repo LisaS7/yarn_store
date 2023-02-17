@@ -6,7 +6,8 @@ CREATE TABLE colours (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     hex_code VARCHAR(8),
-    stock_quantity INT
+    stock_quantity INT,
+    yarn_id INT REFERENCES yarns(id)
 );
 
 CREATE TABLE manufacturers (
