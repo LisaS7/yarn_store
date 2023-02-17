@@ -1,14 +1,7 @@
+DROP TABLE IF EXISTS colours;
 DROP TABLE IF EXISTS yarns;
 DROP TABLE IF EXISTS manufacturers;
-DROP TABLE IF EXISTS colours;
 
-CREATE TABLE colours (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    hex_code VARCHAR(8),
-    stock_quantity INT,
-    yarn_id INT REFERENCES yarns(id)
-);
 
 CREATE TABLE manufacturers (
     id SERIAL PRIMARY KEY,
@@ -29,4 +22,12 @@ CREATE TABLE yarns (
     buy_cost INT,
     sell_price INT,
     image VARCHAR(255)
+);
+
+CREATE TABLE colours (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    hex_code VARCHAR(8),
+    stock_quantity INT,
+    yarn_id INT REFERENCES yarns(id)
 );
