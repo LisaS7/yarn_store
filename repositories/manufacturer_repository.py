@@ -1,4 +1,5 @@
 from db.run_sql import run_sql
+from datetime import datetime as dt
 
 TABLE_NAME = "manufacturers"
 FIELDS = "name, last_payment_date, balance_due"
@@ -9,17 +10,18 @@ placeholders = ", ".join(["%s"] * number_of_fields)
 from models.manufacturer import Manufacturer
 
 
-# def select_all():
-#     tasks = []
+def select_all():
+    manufacturers = []
 
-#     sql = f"SELECT * FROM {TABLE_NAME}"
-#     results = run_sql(sql)
+    sql = f"SELECT * FROM {TABLE_NAME}"
+    results = run_sql(sql)
 
-#     for row in results:
-#         # create object
-#         # append to list
-#         pass
-#     return tasks
+    for row in results:
+        manufacturer = Manufacturer(
+            row["name"], row["last_payment_date"], row["balance_due"], row["id"]
+        )
+        manufacturers.append(manufacturer)
+    return manufacturers
 
 
 # def select(id):
