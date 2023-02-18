@@ -1,0 +1,30 @@
+@import "./style.css";
+
+/* -------- LANDING PAGE -------- */
+
+.index-page {
+    padding: 3rem;
+}
+
+.index-page section {
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.index-page img {
+    width: 50%;
+    border-radius: 15px 50px;
+}
+
+.main-text h1 {
+    color: var(--dark);
+}
+
+.main-text h4 {
+    color: var(--mid);
+}
+
+.main-text button {
+    margin-top: 2rem;
+}
