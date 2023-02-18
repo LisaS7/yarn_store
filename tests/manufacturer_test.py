@@ -22,5 +22,8 @@ class TestManufacturer(unittest.TestCase):
     def test_mfr_format_currency(self):
         self.assertEqual(self.manufacturer.format_currency_balance(), "£100.50")
 
-    def test_mfr_date_in_psql_format(self):
+    def test_mfr_format_date_for_psql(self):
         self.assertEqual(self.manufacturer.format_date_for_psql(), "2023-01-12")
+
+    def test_mfr_format_date_for_view(self):
+        self.assertEqual(self.manufacturer.format_date_for_view(), "12 January 2023")

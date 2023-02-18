@@ -16,3 +16,6 @@ class Manufacturer:
 
     def format_date_for_psql(self):
         return self.last_payment_date.strftime("%Y-%m-%d")
+
+    def format_date_for_view(self):
+        return self.last_payment_date.strftime("%d %B %Y")
