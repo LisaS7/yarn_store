@@ -24,15 +24,19 @@ def select_all():
     return manufacturers
 
 
-# def select(id):
-#     sql = f"SELECT * FROM {TABLE_NAME} WHERE id = %s"
-#     values = [id]
-#     results = run_sql(sql, values)
+def select(id):
+    sql = f"SELECT * FROM {TABLE_NAME} WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
 
-#     if results:
-#         result = results[0]
-#         # create object
-#         # return object
+    if result:
+        manufacturer = Manufacturer(
+            result["name"],
+            result["last_payment_date"],
+            result["balance_due"],
+            result["id"],
+        )
+        return manufacturer
 
 
 def delete_all():
