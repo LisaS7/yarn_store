@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from models.manufacturer import Manufacturer
 from typing import Optional
+from decimal import Decimal
 
 
 @dataclass
@@ -12,8 +13,8 @@ class Yarn:
     length_metres: int
     needle_size_mm: float
     fibre_type: str
-    buy_cost: int
-    sell_price: int
+    buy_cost: Decimal
+    sell_price: Decimal
     image: Optional[str] = None
     id: Optional[int] = None
 

@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from datetime import datetime as dt
+from decimal import Decimal
 
 TABLE_NAME = "manufacturers"
 FIELDS = "name, last_payment_date, balance_due"
@@ -17,8 +18,11 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
+        print(row["balance_due"])
+        balance_due = Decimal(row["balance_due"])
+
         manufacturer = Manufacturer(
-            row["name"], row["last_payment_date"], row["balance_due"], row["id"]
+            row["name"], row["last_payment_date"], balance_due, row["id"]
         )
         manufacturers.append(manufacturer)
     return manufacturers
@@ -62,7 +66,11 @@ def save(manufacturer):
     manufacturer.id = result[0]["id"]
 
 
-# def update(task):
-#     sql = f"""UPDATE {TABLE_NAME} SET ({FIELDS}) = ({placeholders}) WHERE id = %s"""
-#     values = []
-#     run_sql(sql, values)
+def update(manufacturer):
+    sql = f"""UPDATE {TABLE_NAME} SET ({FIELDS}) = ({placeholders}) WHERE id = %s"""
+    values = [
+        manufacturer.name,
+        manufacturer.format_date_for_psql(),
+        manufacturer.balance_due,
+    ]
+    run_sql(sql, values)

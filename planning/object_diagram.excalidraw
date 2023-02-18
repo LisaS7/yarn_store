@@ -119,8 +119,8 @@
     },
     {
       "type": "text",
-      "version": 457,
-      "versionNonce": 598062691,
+      "version": 460,
+      "versionNonce": 1213085072,
       "isDeleted": false,
       "id": "lKIq--m2gU39LK-fHwiiD",
       "fillStyle": "hachure",
@@ -130,7 +130,7 @@
       "opacity": 100,
       "angle": 0,
       "x": 424.5424499511719,
-      "y": 198.57147216796875,
+      "y": 198.5152587890625,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 284,
@@ -144,17 +144,17 @@
           "type": "arrow"
         }
       ],
-      "updated": 1676641534639,
+      "updated": 1676740047688,
       "link": null,
       "locked": false,
       "fontSize": 16,
       "fontFamily": 2,
-      "text": "id: 1\nname: \"Stylecraft Special\"\nmanufacturer: \"Stylecraft\": Manufacturer\nyarn_weight: \"DK\"\nball_weight_grams: 100\nlength_metres: 295\nneedle_size_mm: 4\nfibre_type: \"Acrylic\"\nbuy_cost: 140\nsell_price: 220\nimage: \"stylecraft_special.jpeg\"\n\n\n",
+      "text": "id: 1\nname: \"Stylecraft Special\"\nmanufacturer: \"Stylecraft\": Manufacturer\nyarn_weight: \"DK\"\nball_weight_grams: 100\nlength_metres: 295\nneedle_size_mm: 4\nfibre_type: \"Acrylic\"\nbuy_cost: 1.40\nsell_price: 2.20\nimage: \"stylecraft_special.jpeg\"\n\n\n",
       "baseline": 248,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "id: 1\nname: \"Stylecraft Special\"\nmanufacturer: \"Stylecraft\": Manufacturer\nyarn_weight: \"DK\"\nball_weight_grams: 100\nlength_metres: 295\nneedle_size_mm: 4\nfibre_type: \"Acrylic\"\nbuy_cost: 140\nsell_price: 220\nimage: \"stylecraft_special.jpeg\"\n\n\n"
+      "originalText": "id: 1\nname: \"Stylecraft Special\"\nmanufacturer: \"Stylecraft\": Manufacturer\nyarn_weight: \"DK\"\nball_weight_grams: 100\nlength_metres: 295\nneedle_size_mm: 4\nfibre_type: \"Acrylic\"\nbuy_cost: 1.40\nsell_price: 2.20\nimage: \"stylecraft_special.jpeg\"\n\n\n"
     },
     {
       "type": "rectangle",
@@ -268,8 +268,8 @@
     },
     {
       "type": "text",
-      "version": 147,
-      "versionNonce": 1369566435,
+      "version": 157,
+      "versionNonce": 598600048,
       "isDeleted": false,
       "id": "CAOa1V_p064FfzjrN5Hir",
       "fillStyle": "hachure",
@@ -278,8 +278,8 @@
       "roughness": 1,
       "opacity": 100,
       "angle": 0,
-      "x": 1015.0518798828125,
-      "y": 190.58416748046875,
+      "x": 1015.72509765625,
+      "y": 191.71099853515625,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 224,
@@ -288,17 +288,17 @@
       "groupIds": [],
       "roundness": null,
       "boundElements": [],
-      "updated": 1676641538452,
+      "updated": 1676740054054,
       "link": null,
       "locked": false,
       "fontSize": 16,
       "fontFamily": 2,
-      "text": "id: 1\nname: \"Stylecraft\"\nlast_payment_date: 19/01/2023\nbalance_due: 15,000\n",
+      "text": "id: 1\nname: \"Stylecraft\"\nlast_payment_date: 19/01/2023\nbalance_due: 150.00\n",
       "baseline": 86,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "id: 1\nname: \"Stylecraft\"\nlast_payment_date: 19/01/2023\nbalance_due: 15,000\n"
+      "originalText": "id: 1\nname: \"Stylecraft\"\nlast_payment_date: 19/01/2023\nbalance_due: 150.00\n"
     },
     {
       "type": "arrow",
@@ -497,8 +497,8 @@
     },
     {
       "type": "arrow",
-      "version": 769,
-      "versionNonce": 117895683,
+      "version": 775,
+      "versionNonce": 168887184,
       "isDeleted": false,
       "id": "paYQ7wYeKfZ7I9cGIc-zM",
       "fillStyle": "hachure",
@@ -508,18 +508,18 @@
       "opacity": 100,
       "angle": 0,
       "x": 246.57100999246418,
-      "y": 260.9046916471987,
+      "y": 260.88768379246187,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 148.74579657048523,
-      "height": 7.5584805729235995,
+      "height": 7.542740821697919,
       "seed": 1200625498,
       "groupIds": [],
       "roundness": {
         "type": 2
       },
       "boundElements": [],
-      "updated": 1676641534640,
+      "updated": 1676740047688,
       "link": null,
       "locked": false,
       "startBinding": {
@@ -542,7 +542,7 @@
         ],
         [
           148.74579657048523,
-          7.5584805729235995
+          7.542740821697919
         ]
       ]
     }

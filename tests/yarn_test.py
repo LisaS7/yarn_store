@@ -41,10 +41,10 @@ class TestYarn(unittest.TestCase):
         self.assertEqual(self.yarn.fibre_type, "20% wool, 80% acrylic")
 
     def test_yarn_has_buy_cost(self):
-        self.assertEqual(self.yarn.buy_cost, 750)
+        self.assertEqual(self.yarn.buy_cost, 7.50)
 
     def test_yarn_has_sell_price(self):
-        self.assertEqual(self.yarn.sell_price, 999)
+        self.assertEqual(self.yarn.sell_price, 9.99)
 
     def test_yarn_has_image(self):
         self.assertEqual(self.yarn.image, "test_image.jpeg")

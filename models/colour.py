@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from typing import Optional
 from models.yarn import Yarn
 
+
 @dataclass
 class Colour:
     name: str

@@ -14,7 +14,7 @@ class TestManufacturer(unittest.TestCase):
         self.assertEqual(self.manufacturer.last_payment_date, dt(2023, 1, 12))
 
     def test_mfr_has_balance_due(self):
-        self.assertEqual(self.manufacturer.balance_due, 10050)
+        self.assertEqual(self.manufacturer.balance_due, 100.50)
 
     def test_mfr_has_id(self):
         self.assertEqual(self.manufacturer.id, 2)
