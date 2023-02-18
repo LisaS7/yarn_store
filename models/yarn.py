@@ -17,7 +17,8 @@ class Yarn:
     image: Optional[str] = None
     id: Optional[int] = None
 
-    def save_image(self, image):
+    @staticmethod
+    def save_image(image):
         if not image:
             image = "none.jpeg"
         else:
