@@ -17,6 +17,11 @@
     border-radius: 15px 50px;
 }
 
+.main-text {
+    margin-top: 3rem;
+    margin-left: 3rem;
+}
+
 .main-text h1 {
     color: var(--dark);
 }

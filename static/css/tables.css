@@ -11,6 +11,10 @@ thead {
     color: var(--light1);
 }
 
+tbody {
+    background-color: var(--light2);
+}
+
 tbody tr {
     border-bottom: 1px solid var(--dark);
 }
