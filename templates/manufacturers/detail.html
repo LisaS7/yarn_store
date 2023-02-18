@@ -13,7 +13,7 @@
         <a href="">
             <span class="material-symbols-outlined details-icon">edit</span>
         </a>
-      <a href="">
+      <a href="{{ url_for('manufacturers.delete_manufacturer', id=manufacturer.id) }}">
         <span class="material-symbols-outlined details-icon"> delete </span>
       </a>
     </div>

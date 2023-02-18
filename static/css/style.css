@@ -5,9 +5,9 @@
     --dark2: #2e171d;
     --mid: #772342;
     --mid2: #591c32;
-    --mid3: #6a5e5c;
+    --mid3: #837775;
     --light1: #e2e2e2;
-    --light2: #cfcccc;
+    --light2: #d9d6d6;
 }
 
 body {
@@ -50,6 +50,7 @@ button {
 nav {
     background-color: var(--mid);
     padding: 2rem;
+    min-width: 10rem;
 }
 
 nav a {
@@ -102,6 +103,8 @@ footer a {
     border: 1px solid var(--dark);
     margin: 3rem;
     padding: 1rem;
+    box-shadow: 0.3rem 0.3rem 1rem 0.5rem #5c5c5c3c;
+    background-color: var(--light2);
     color: var(--dark);
     border-radius: 5px;
 }

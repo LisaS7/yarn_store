@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect
 from repositories import manufacturer_repository
 from models.manufacturer import Manufacturer
 from datetime import datetime as dt
@@ -31,4 +31,11 @@ def create_manufacturer():
 
         new_manufacturer = Manufacturer(name, dt(year, month, day), balance_due)
         manufacturer_repository.save(new_manufacturer)
+        return redirect("/manufacturers/")
     return render_template("/manufacturers/new.html")
+
+
+@manufacturers_blueprint.route("/delete/<id>")
+def delete_manufacturer(id):
+    manufacturer_repository.delete(id)
+    return redirect("/manufacturers/")
