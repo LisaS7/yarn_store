@@ -4,11 +4,9 @@
     --dark: #2c466c;
     --dark2: #3e1e27;
     --mid: #772342;
-    --mid2: #164369;
     --mid3: #634b48;
     --light1: #d5d7d6;
-    --light2: #ace1ed;
-    --light3: #8d847f;
+    --light2: #8d847f;
 }
 
 body {
@@ -18,20 +16,29 @@ body {
     color: var(--mid3);
 }
 
+body > main > section {
+    padding: 3rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 button {
     border: none;
     border-radius: 5px;
     padding: 1rem;
-    background-color: var(--mid2);
+    background-color: var(--dark);
     color: var(--light1);
 }
 
 /* -------- NAVBAR -------- */
 
 nav {
-    padding-right: 2rem;
-    padding-top: 2rem;
     background-color: var(--mid);
+    padding: 2rem;
 }
 
 nav a {
@@ -44,9 +51,16 @@ nav a:hover {
     border: 3px solid var(--dark2);
 }
 
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+}
+
 nav li {
     list-style: none;
-    padding: 0.5rem;
+    padding-top: 1rem;
 }
 
 /* -------- MAIN -------- */
@@ -54,10 +68,6 @@ nav li {
 main {
     display: flex;
     gap: 2rem;
-}
-
-main section {
-    padding: 3rem;
 }
 
 
@@ -71,12 +81,38 @@ footer {
 }
 
 footer a {
-    color: var(--light3);
+    color: var(--light2);
 }
 
 
-/*       ICONS       */
+/* -------- DETAILS CARDS -------- */
 
-.icon-image {
-    width: 2rem;
+.details-card {
+    border: 1px solid var(--dark);
+    margin: 3rem;
+    padding: 1rem;
+    color: var(--dark);
+    border-radius: 5px;
 }
+
+.details-content {
+    display: flex;
+    gap: 1.5rem;
+    border-top: 1px solid var(--dark2);
+    border-bottom: 1px solid var(--dark2);
+}
+
+.details-content h4 {
+    color: var(--mid);
+}
+
+.details-controls {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.details-icon {
+    color: var(--dark);
+}
+

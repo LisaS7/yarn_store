@@ -7,7 +7,7 @@ table {
 }
 
 thead {
-    background-color: var(--mid2);
+    background-color: var(--dark);
     color: var(--light1);
 }
 
@@ -22,4 +22,8 @@ th, td {
 
 .manufacturer-table td:nth-child(4) {
     text-align: center;
+}
+
+.icon-image {
+    width: 2rem;
 }

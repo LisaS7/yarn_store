@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<section>
+  <aside class="details-card">
+    <h2>{{ manufacturer.name }}</h2>
+    <div class="details-content">
+        <p>Last paid:
+            <h4>{{ manufacturer.format_date_for_view() }}</h4></p>
+      <p>Balance to pay:
+        <h4>{{ manufacturer.format_currency_balance() }}</h4></p>
+    </div>
+    <div class="details-controls">
+        <a href="">
+            <span class="material-symbols-outlined details-icon">edit</span>
+        </a>
+      <a href="">
+        <span class="material-symbols-outlined details-icon"> delete </span>
+      </a>
+    </div>
+  </aside>
+</section>
+{% endblock content %}

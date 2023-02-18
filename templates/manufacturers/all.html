@@ -1,5 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-<h2>All Manufacturers</h2>
+<header>
+  <h2>All Manufacturers</h2>
+  <button>Add Manufacturer</button>
+</header>
+
 <table class="manufacturer-table">
   <thead>
     <tr>
@@ -16,7 +20,7 @@
       <td>{{manufacturer.format_date_for_view()}}</td>
       <td>{{manufacturer.format_currency_balance()}}</td>
       <td>
-        <a href=""
+        <a href="{{ url_for('manufacturers.detail', id=manufacturer.id) }}"
           ><img
             class="icon-image"
             src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
