@@ -5,13 +5,13 @@
     --dark2: #3e1e27;
     --mid: #772342;
     --mid2: #164369;
-    --mid3: #8b817c;
+    --mid3: #634b48;
     --light1: #d5d7d6;
     --light2: #ace1ed;
+    --light3: #8d847f;
 }
 
 body {
-    width: 80%;
     margin: auto;
     background-color: var(--light1);
     font-family: 'Quicksand', sans-serif;
@@ -64,8 +64,14 @@ main section {
 /* -------- FOOTER -------- */
 
 footer {
+    display: flex;
+    justify-content: space-evenly;
     padding: 2rem;
     background-color: var(--mid3);
+}
+
+footer a {
+    color: var(--light3);
 }
 
 
