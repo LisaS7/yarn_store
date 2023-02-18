@@ -1,1 +1,31 @@
-{% extends 'base.html' %} {% block content %} Welcome page{% endblock content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style.css" />
+
+    <title>Loops & Strings</title>
+  </head>
+  <body class="index-page">
+    <section>
+      <div class="main-text">
+        <h1>Loops & Strings</h1>
+        <h4>Yarn Inventory System</h4>
+        <p>
+          Loops & Strings is a free inventory management system for yarn
+          products and manufacturers.
+        </p>
+        <a href="{{ url_for('manufacturers.manufacturers') }}"
+          ><button>Manage Yarn</button></a
+        >
+      </div>
+
+      <img
+        src="{{ url_for('static', filename='/images/landing_image.jpg') }}"
+        alt="library"
+      />
+    </section>
+  </body>
+</html>
