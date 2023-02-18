@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+<h2>All Manufacturers</h2>
+<table class="manufacturer-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last Payment Date</th>
+      <th>Balance Due</th>
+      <th>View Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for manufacturer in manufacturers %}
+    <tr>
+      <td>{{manufacturer.name}}</td>
+      <td>{{manufacturer.format_date_for_view()}}</td>
+      <td>{{manufacturer.format_currency_balance()}}</td>
+      <td>
+        <a href=""
+          ><img
+            class="icon-image"
+            src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
+            alt=""
+        /></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}
