@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<section>
+  <h1>New Manufacturer</h1>
+  <form
+    action="{{ url_for('manufacturers.create_manufacturer') }}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <label for="title">Name: </label>
+    <input type="text" id="name" name="name" />
+    <label for="author">Last payment date: </label>
+    <input type="date" id="last_payment_date" name="last_payment_date" />
+    <label for="genre">Outstanding Balance: </label>
+    <input type="text" id="balance_due" name="balance_due" />
+
+    <div class="submit-button"><button type="submit">Submit</button></div>
+  </form>
+</section>
+
+{% endblock content %}
