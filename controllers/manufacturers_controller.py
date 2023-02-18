@@ -24,7 +24,7 @@ def detail(id):
 def create_manufacturer():
     if request.method == "POST":
         name = request.form["name"]
-        balance_due = request.form["balance_due"]
+        balance_due = int(request.form["balance_due"].replace(".", ""))
 
         last_payment_date = request.form["last_payment_date"]
         year, month, day = map(int, last_payment_date.split("-"))
@@ -39,3 +39,20 @@ def create_manufacturer():
 def delete_manufacturer(id):
     manufacturer_repository.delete(id)
     return redirect("/manufacturers/")
+
+
+@manufacturers_blueprint.route("/edit/<id>", methods=["GET", "POST"])
+def edit_manufacturer(id):
+    if request.method == "POST":
+        name = request.form["name"]
+        balance_due = int(request.form["balance_due"].replace(".", ""))
+
+        last_payment_date = request.form["last_payment_date"]
+        year, month, day = map(int, last_payment_date.split("-"))
+
+        manufacturer = Manufacturer(name, dt(year, month, day), balance_due, id)
+        manufacturer_repository.update(manufacturer)
+        return redirect("/manufacturers/")
+
+    manufacturer = manufacturer_repository.select(id)
+    return render_template("/manufacturers/edit.html", manufacturer=manufacturer)

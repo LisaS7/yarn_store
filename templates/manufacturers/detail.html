@@ -10,7 +10,7 @@
         <h4>{{ manufacturer.format_currency_balance() }}</h4></p>
     </div>
     <div class="details-controls">
-        <a href="">
+        <a href="{{ url_for('manufacturers.edit_manufacturer', id=manufacturer.id) }}">
             <span class="material-symbols-outlined details-icon">edit</span>
         </a>
       <a href="{{ url_for('manufacturers.delete_manufacturer', id=manufacturer.id) }}">

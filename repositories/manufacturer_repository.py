@@ -18,7 +18,6 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        print(row["balance_due"])
         balance_due = Decimal(row["balance_due"])
 
         manufacturer = Manufacturer(
@@ -72,5 +71,6 @@ def update(manufacturer):
         manufacturer.name,
         manufacturer.format_date_for_psql(),
         manufacturer.balance_due,
+        manufacturer.id,
     ]
     run_sql(sql, values)

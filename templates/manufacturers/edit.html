@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+<section>
+  <h1>Edit Manufacturer</h1>
+  <form
+    action="{{ url_for('manufacturers.edit_manufacturer', id=manufacturer.id) }}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <label for="title">Name: </label>
+    <input type="text" id="name" name="name" value="{{ manufacturer.name }}" />
+    <label for="author">Last payment date: </label>
+    <input
+      type="date"
+      id="last_payment_date"
+      name="last_payment_date"
+      value="{{ manufacturer.last_payment_date }}"
+    />
+    <label for="genre">Outstanding Balance: </label>
+    <input
+      type="text"
+      id="balance_due"
+      name="balance_due"
+      value="{{ manufacturer.format_currency_balance()[1:] }}"
+    />
+
+    <div class="submit-button"><button type="submit">Submit</button></div>
+  </form>
+</section>
+
+{% endblock content %}
