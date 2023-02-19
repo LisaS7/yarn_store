@@ -1,7 +1,5 @@
 from db.run_sql import run_sql
-
-TABLE_NAME = "colours"
-FIELDS = "name, hex_code, stock_quantity, yarn_id"
+from config import colours_table_name as TABLE_NAME, colours_fields as FIELDS
 
 number_of_fields = len(FIELDS.split(","))
 placeholders = ", ".join(["%s"] * number_of_fields)

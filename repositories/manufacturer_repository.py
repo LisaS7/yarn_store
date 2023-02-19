@@ -1,9 +1,6 @@
 from db.run_sql import run_sql
-from datetime import datetime as dt
 from models.manufacturer import Manufacturer
-
-TABLE_NAME = "manufacturers"
-FIELDS = "name, last_payment_date, balance_due"
+from config import manufacturer_table_name as TABLE_NAME, manufacturer_fields as FIELDS
 
 number_of_fields = len(FIELDS.split(","))
 placeholders = ", ".join(["%s"] * number_of_fields)

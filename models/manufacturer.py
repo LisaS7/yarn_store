@@ -18,3 +18,8 @@ class Manufacturer:
 
     def format_date_for_view(self):
         return self.last_payment_date.strftime("%d %B %Y")
+
+    @staticmethod
+    def form_date_to_datetime(form_date):
+        year, month, day = map(int, form_date.split("-"))
+        return datetime(year, month, day)

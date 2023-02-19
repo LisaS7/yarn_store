@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, request, redirect
 from repositories import manufacturer_repository
 from models.manufacturer import Manufacturer
-from datetime import datetime as dt
 
 manufacturers_blueprint = Blueprint(
     "manufacturers", __name__, url_prefix="/manufacturers"
@@ -24,12 +23,12 @@ def detail(id):
 def create_manufacturer():
     if request.method == "POST":
         name = request.form["name"]
-        balance_due = int(request.form["balance_due"].replace(".", ""))
+        balance_due = int(request.form["balance_due"])
+        last_payment_date = Manufacturer.form_date_to_datetime(
+            request.form["last_payment_date"]
+        )
 
-        last_payment_date = request.form["last_payment_date"]
-        year, month, day = map(int, last_payment_date.split("-"))
-
-        new_manufacturer = Manufacturer(name, dt(year, month, day), balance_due)
+        new_manufacturer = Manufacturer(name, last_payment_date, balance_due)
         manufacturer_repository.save(new_manufacturer)
         return redirect("/manufacturers/")
     return render_template("/manufacturers/new.html")
@@ -45,12 +44,13 @@ def delete_manufacturer(id):
 def edit_manufacturer(id):
     if request.method == "POST":
         name = request.form["name"]
-        balance_due = int(request.form["balance_due"].replace(".", ""))
+        balance_due = int(request.form["balance_due"])
 
-        last_payment_date = request.form["last_payment_date"]
-        year, month, day = map(int, last_payment_date.split("-"))
+        last_payment_date = Manufacturer.form_date_to_datetime(
+            request.form["last_payment_date"]
+        )
 
-        manufacturer = Manufacturer(name, dt(year, month, day), balance_due, id)
+        manufacturer = Manufacturer(name, last_payment_date, balance_due, id)
         manufacturer_repository.update(manufacturer)
         return redirect("/manufacturers/")
 

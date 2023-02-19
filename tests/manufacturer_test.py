@@ -27,3 +27,7 @@ class TestManufacturer(unittest.TestCase):
 
     def test_mfr_format_date_for_view(self):
         self.assertEqual(self.manufacturer.format_date_for_view(), "12 January 2023")
+
+    def test_mfr_form_date_to_datetime(self):
+        dt_date = self.manufacturer.form_date_to_datetime("2023-01-12")
+        self.assertEqual(dt_date, dt(2023, 1, 12))

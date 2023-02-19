@@ -1,9 +1,7 @@
 from db.run_sql import run_sql
 from models.yarn import Yarn
 from repositories import manufacturer_repository
-
-TABLE_NAME = "yarns"
-FIELDS = "name, manufacturer_id, yarn_weight, ball_weight_grams, length_metres, needle_size_mm, fibre_type, buy_cost, sell_price, image"
+from config import yarn_table_name as TABLE_NAME, yarn_fields as FIELDS
 
 number_of_fields = len(FIELDS.split(","))
 placeholders = ", ".join(["%s"] * number_of_fields)

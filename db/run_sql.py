@@ -1,5 +1,6 @@
 import psycopg2
 import psycopg2.extras as ext
+from config import db_name
 
 
 def run_sql(sql, values=None):
@@ -7,7 +8,7 @@ def run_sql(sql, values=None):
     results = []
 
     try:
-        conn = psycopg2.connect(f"dbname='yarn_store'")
+        conn = psycopg2.connect(f"dbname='{db_name}'")
         cur = conn.cursor(cursor_factory=ext.DictCursor)
         cur.execute(sql, values)
         conn.commit()
