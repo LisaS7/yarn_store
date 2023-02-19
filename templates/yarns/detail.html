@@ -28,12 +28,12 @@
           Needle Size:
           <h4>{{ yarn.needle_size_mm }}mm</h4>
         </div>
-      </aside>
-      <aside>
         <div>
           Fibre Type:
           <h4>{{ yarn.fibre_type }}</h4>
         </div>
+      </aside>
+      <aside>
         <div>
           Buy Cost:
           <h4>{{ yarn.format_currency(yarn.buy_cost) }}</h4>
@@ -41,6 +41,10 @@
         <div>
           Sell Price:
           <h4>{{ yarn.format_currency(yarn.sell_price) }}</h4>
+        </div>
+        <div>
+          Profit:
+          <h4>{{ yarn.format_currency(yarn.profit) }}</h4>
         </div>
       </aside>
     </div>

@@ -84,6 +84,7 @@ def save(yarn):
         yarn.image,
     ]
     result = run_sql(sql, values)
+    print(result)
     yarn.id = result[0]["id"]
 
 

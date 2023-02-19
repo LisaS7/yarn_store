@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %}
+<section>
+  <h1>New Yarn</h1>
+  <form
+    action="{{ url_for('yarns.create_yarn') }}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" />
+    <label for="manufacturer">Manufacturer: </label>
+    <select name="manufacturer" id="manufacturer">
+      {% for manufacturer in manufacturers %}
+      <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
+      {% endfor %}
+    </select>
+
+    <label for="yarn_weight">Yarn Weight </label>
+    <select name="yarn_weight" id="yarn_weight">
+      {% for weight in yarn_weights %}
+      <option value="{{weight}}">{{weight}}</option>
+      {% endfor %}
+    </select>
+
+    <label for="ball_weight">Ball Weight (grams): </label>
+    <input type="text" id="ball_weight" name="ball_weight" />
+
+    <label for="length">Length (metres): </label>
+    <input type="text" id="length" name="length" />
+
+    <label for="needle_size">Needle Size (mm): </label>
+    <input type="text" id="needle_size" name="needle_size" />
+
+    <label for="fibre_type">Fibre Type: </label>
+    <input type="text" id="fibre_type" name="fibre_type" />
+
+    <label for="buy_cost">Buy Cost (p): </label>
+    <input type="text" id="buy_cost" name="buy_cost" />
+
+    <label for="sell_price">Sell Price (p): </label>
+    <input type="text" id="sell_price" name="sell_price" />
+
+    <label for="image">Image: </label>
+    <input type="file" id="image" name="image" />
+
+    <div class="submit-button"><button type="submit">Submit</button></div>
+  </form>
+</section>
+
+{% endblock content %}
