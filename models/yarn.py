@@ -18,9 +18,17 @@ class Yarn:
     image: Optional[str] = None
     id: Optional[int] = None
 
+    def __post_init__(self):
+        self.buy_cost = Decimal(self.buy_cost)
+        self.sell_price = Decimal(self.sell_price)
+
     @staticmethod
     def save_image(image):
         if not image:
             image = "none.jpeg"
         else:
             image.save("./static/images/yarns/" + image.filename)
+
+    @staticmethod
+    def format_currency(value):
+        return "£{0:,.2f}".format(value)

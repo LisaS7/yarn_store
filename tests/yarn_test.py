@@ -60,3 +60,7 @@ class TestYarn(unittest.TestCase):
         self.assertTrue(
             filecmp.cmp(self.test_image_location, self.saved_image_location)
         )
+
+    def test_format_currency(self):
+        currency_string = self.yarn.format_currency(self.yarn.buy_cost)
+        self.assertEqual(currency_string, "£7.50")

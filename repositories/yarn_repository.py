@@ -1,4 +1,6 @@
 from db.run_sql import run_sql
+from models.yarn import Yarn
+from repositories import manufacturer_repository
 
 TABLE_NAME = "yarns"
 FIELDS = "name, manufacturer_id, yarn_weight, ball_weight_grams, length_metres, needle_size_mm, fibre_type, buy_cost, sell_price, image"
@@ -6,20 +8,30 @@ FIELDS = "name, manufacturer_id, yarn_weight, ball_weight_grams, length_metres, 
 number_of_fields = len(FIELDS.split(","))
 placeholders = ", ".join(["%s"] * number_of_fields)
 
-from models.yarn import Yarn
 
+def select_all():
+    yarns = []
 
-# def select_all():
-#     tasks = []
+    sql = f"SELECT * FROM {TABLE_NAME}"
+    results = run_sql(sql)
 
-#     sql = f"SELECT * FROM {TABLE_NAME}"
-#     results = run_sql(sql)
-
-#     for row in results:
-#         # create object
-#         # append to list
-#         pass
-#     return tasks
+    for row in results:
+        manufacturer = manufacturer_repository.select(row["manufacturer_id"])
+        yarn = Yarn(
+            row["name"],
+            manufacturer,
+            row["yarn_weight"],
+            row["ball_weight_grams"],
+            row["length_metres"],
+            row["needle_size_mm"],
+            row["fibre_type"],
+            row["buy_cost"],
+            row["sell_price"],
+            row["image"],
+            row["id"],
+        )
+        yarns.append(yarn)
+    return yarns
 
 
 # def select(id):

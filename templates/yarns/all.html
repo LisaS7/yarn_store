@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+<header>
+  <h2>All Yarns</h2>
+  <!-- TODO -->
+  <a href="{{ url_for('manufacturers.create_manufacturer') }}"
+    ><button>Add Yarn</button></a
+  >
+</header>
+
+<table class="yarn-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Yarn Weight</th>
+      <th>Ball Weight</th>
+      <th>Fibre Type</th>
+      <th>Buy Cost</th>
+      <th>Sell Price</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for yarn in yarns %}
+    <tr>
+      <td>{{yarn.name}}</td>
+      <td>{{yarn.manufacturer.name}}</td>
+      <td>{{yarn.yarn_weight}}</td>
+      <td>{{yarn.ball_weight_grams}}g</td>
+      <td>{{yarn.fibre_type}}</td>
+      <td>{{yarn.format_currency(yarn.buy_cost)}}</td>
+      <td>{{yarn.format_currency(yarn.sell_price)}}</td>
+      <td>
+        <a href="{{ url_for('yarns.detail') }}"
+          ><img
+            class="icon-image"
+            src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
+            alt=""
+        /></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

@@ -11,6 +11,9 @@ class Manufacturer:
     balance_due: Decimal
     id: Optional[int] = None
 
+    def __post_init__(self):
+        self.balance_due = Decimal(self.balance_due)
+
     def format_currency_balance(self):
         return "£{0:,.2f}".format(self.balance_due)
 

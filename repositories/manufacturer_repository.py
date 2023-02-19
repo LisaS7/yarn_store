@@ -1,14 +1,13 @@
 from db.run_sql import run_sql
 from datetime import datetime as dt
 from decimal import Decimal
+from models.manufacturer import Manufacturer
 
 TABLE_NAME = "manufacturers"
 FIELDS = "name, last_payment_date, balance_due"
 
 number_of_fields = len(FIELDS.split(","))
 placeholders = ", ".join(["%s"] * number_of_fields)
-
-from models.manufacturer import Manufacturer
 
 
 def select_all():
