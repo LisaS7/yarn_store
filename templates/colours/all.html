@@ -3,19 +3,22 @@
   <h2>All Yarn Colours</h2>
 </header>
 
-<table class="colour-table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Colour</th>
-      <th>Quantity</th>
-      <th>Yarn</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for colour in colours %}
+{% for group in yarn_groups %}
+<details open>
+  <summary>{{group}}</summary>
+  <p class="colour-yarn-details"><a href="{{ url_for('yarns.detail', id=yarn_groups[group][0].yarn.id) }}">View Yarn Details</a></p>
+    
+  <table class="colour-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Colour</th>
+        <th>Quantity</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    {% for colour in yarn_groups[group] %}
     <tr>
       <td>{{colour.name}}</td>
       <td>
@@ -26,21 +29,19 @@
           circle
         </span>
       </td>
-      <td>{{colour.stock_quantity}}</td>
-      <td>
-        <a href="{{ url_for('yarns.detail', id=colour.yarn.id) }}"
-          >{{colour.yarn.manufacturer.name}} - {{colour.yarn.name}}</a
-        >
-      </td>
-      <td>
-        <a href=""><span class="material-symbols-outlined"> edit </span></a>
-      </td>
-      <td>
-        <a href=""><span class="material-symbols-outlined"> close </span></a>
-      </td>
+    </td>
+    <td>{{colour.stock_quantity}}</td>
+    <td>
+      <a href=""><span class="material-symbols-outlined"> edit </span></a>
+    </td>
+    <td>
+      <a href=""><span class="material-symbols-outlined"> close </span></a>
+    </td>
     </tr>
     {% endfor %}
-  </tbody>
-</table>
+  </table>
+</details>
+{% endfor %}
+
 
 {% endblock content %}

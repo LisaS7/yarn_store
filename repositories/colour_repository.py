@@ -15,7 +15,6 @@ def select_all():
 
     for row in results:
         yarn = yarn_repository.select(row["yarn_id"])
-        print(yarn)
         colour = Colour(
             row["name"],
             row["hex_code"],

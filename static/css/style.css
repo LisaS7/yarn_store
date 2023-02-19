@@ -153,3 +153,14 @@ footer a {
     color: var(--dark);
 }
 
+.colour-yarn-details {
+    padding: 0.5rem;
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.colour-yarn-details a {
+    text-decoration: none;
+}
+
