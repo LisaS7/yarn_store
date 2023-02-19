@@ -53,3 +53,9 @@ def create_yarn():
     return render_template(
         "/yarns/new.html", manufacturers=manufacturers, yarn_weights=yarn_weights
     )
+
+
+@yarns_blueprint.route("/delete/<id>")
+def delete_yarn(id):
+    yarn_repository.delete(id)
+    return redirect("/yarns/")

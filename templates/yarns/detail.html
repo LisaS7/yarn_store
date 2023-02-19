@@ -52,7 +52,7 @@
       <a href="">
         <span class="material-symbols-outlined details-icon">edit</span>
       </a>
-      <a href="">
+      <a href="{{ url_for('yarns.delete_yarn', id=yarn.id) }}">
         <span class="material-symbols-outlined details-icon"> delete </span>
       </a>
     </div>
