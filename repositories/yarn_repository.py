@@ -88,7 +88,19 @@ def save(yarn):
     yarn.id = result[0]["id"]
 
 
-# def update(task):
-#     sql = f"""UPDATE {TABLE_NAME} SET ({FIELDS}) = ({placeholders}) WHERE id = %s"""
-#     values = []
-#     run_sql(sql, values)
+def update(yarn):
+    sql = f"""UPDATE {TABLE_NAME} SET ({FIELDS}) = ({placeholders}) WHERE id = %s"""
+    values = [
+        yarn.name,
+        yarn.manufacturer.id,
+        yarn.yarn_weight,
+        yarn.ball_weight_grams,
+        yarn.length_metres,
+        yarn.needle_size_mm,
+        yarn.fibre_type,
+        yarn.buy_cost,
+        yarn.sell_price,
+        yarn.image,
+        yarn.id,
+    ]
+    run_sql(sql, values)

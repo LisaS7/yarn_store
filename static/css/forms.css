@@ -4,6 +4,11 @@ form {
     display: grid;
 }
 
+form img {
+    width: 4rem;
+    padding: 2rem;
+}
+
 input {
     padding: 0.7rem;
     background-color: #f4f2f2;
@@ -11,6 +16,10 @@ input {
 
 label {
     margin: 1rem 0;
+}
+
+select {
+    padding: 0.7rem;
 }
 
 .submit-button {

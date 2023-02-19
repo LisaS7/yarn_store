@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% block content %}
+<section>
+  <h1>Edit Yarn - {{ yarn.manufacturer.name }} {{ yarn.name }}</h1>
+  <form
+    action="{{ url_for('yarns.edit_yarn', id=yarn.id) }}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" value="{{yarn.name}}" />
+    <label for="manufacturer">Manufacturer: </label>
+    <select name="manufacturer" id="manufacturer">
+      {% for manufacturer in manufacturers %}
+      <option value="{{manufacturer.id}}" 
+      {% if yarn.manufacturer.id == manufacturer.id %}
+        selected="selected"
+      {% endif %}>{{manufacturer.name}}
+    </option>
+      {% endfor %}
+    </select>
+
+    <label for="yarn_weight">Yarn Weight </label>
+    <select name="yarn_weight" id="yarn_weight">
+      {% for weight in yarn_weights %}
+      <option value="{{weight}}" 
+      {% if yarn.yarn_weight == weight %}
+        selected="selected"
+      {% endif %}>{{weight}}
+      </option>
+      {% endfor %}
+    </select>
+
+    <label for="ball_weight">Ball Weight (grams): </label>
+    <input type="number" id="ball_weight" name="ball_weight" value="{{yarn.ball_weight_grams}}"/>
+
+    <label for="length">Length (metres): </label>
+    <input type="number" id="length" name="length" value="{{yarn.length_metres}}"/>
+
+    <label for="needle_size">Needle Size (mm): </label>
+    <input type="number" id="needle_size" name="needle_size" value="{{yarn.needle_size_mm}}"/>
+
+    <label for="fibre_type">Fibre Type: </label>
+    <input type="text" id="fibre_type" name="fibre_type" value="{{yarn.fibre_type}}"/>
+
+    <label for="buy_cost">Buy Cost (p): </label>
+    <input type="number" id="buy_cost" name="buy_cost" value="{{yarn.buy_cost}}" />
+
+    <label for="sell_price">Sell Price (p): </label>
+    <input type="number" id="sell_price" name="sell_price" value="{{yarn.sell_price}}" />
+
+    <label for="image">Image: </label>
+    <img src="{{ url_for('static', filename='/images/yarns/' + yarn.image) }}" alt="">
+    <input type="file" id="image" name="image" />
+
+    <div class="submit-button"><button type="submit">Submit</button></div>
+  </form>
+</section>
+
+{% endblock content %}
