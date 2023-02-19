@@ -1,6 +1,5 @@
 from db.run_sql import run_sql
 from datetime import datetime as dt
-from decimal import Decimal
 from models.manufacturer import Manufacturer
 
 TABLE_NAME = "manufacturers"
@@ -17,10 +16,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        balance_due = Decimal(row["balance_due"])
-
         manufacturer = Manufacturer(
-            row["name"], row["last_payment_date"], balance_due, row["id"]
+            row["name"], row["last_payment_date"], row["balance_due"], row["id"]
         )
         manufacturers.append(manufacturer)
     return manufacturers

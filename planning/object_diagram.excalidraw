@@ -119,8 +119,8 @@
     },
     {
       "type": "text",
-      "version": 460,
-      "versionNonce": 1213085072,
+      "version": 466,
+      "versionNonce": 357208322,
       "isDeleted": false,
       "id": "lKIq--m2gU39LK-fHwiiD",
       "fillStyle": "hachure",
@@ -129,8 +129,8 @@
       "roughness": 1,
       "opacity": 100,
       "angle": 0,
-      "x": 424.5424499511719,
-      "y": 198.5152587890625,
+      "x": 425.2139587402344,
+      "y": 199.75653076171875,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 284,
@@ -144,17 +144,17 @@
           "type": "arrow"
         }
       ],
-      "updated": 1676740047688,
+      "updated": 1676799286987,
       "link": null,
       "locked": false,
       "fontSize": 16,
       "fontFamily": 2,
-      "text": "id: 1\nname: \"Stylecraft Special\"\nmanufacturer: \"Stylecraft\": Manufacturer\nyarn_weight: \"DK\"\nball_weight_grams: 100\nlength_metres: 295\nneedle_size_mm: 4\nfibre_type: \"Acrylic\"\nbuy_cost: 1.40\nsell_price: 2.20\nimage: \"stylecraft_special.jpeg\"\n\n\n",
+      "text": "id: 1\nname: \"Stylecraft Special\"\nmanufacturer: \"Stylecraft\": Manufacturer\nyarn_weight: \"DK\"\nball_weight_grams: 100\nlength_metres: 295\nneedle_size_mm: 4\nfibre_type: \"Acrylic\"\nbuy_cost: 140\nsell_price: 220\nimage: \"stylecraft_special.jpeg\"\n\n\n",
       "baseline": 248,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "id: 1\nname: \"Stylecraft Special\"\nmanufacturer: \"Stylecraft\": Manufacturer\nyarn_weight: \"DK\"\nball_weight_grams: 100\nlength_metres: 295\nneedle_size_mm: 4\nfibre_type: \"Acrylic\"\nbuy_cost: 1.40\nsell_price: 2.20\nimage: \"stylecraft_special.jpeg\"\n\n\n"
+      "originalText": "id: 1\nname: \"Stylecraft Special\"\nmanufacturer: \"Stylecraft\": Manufacturer\nyarn_weight: \"DK\"\nball_weight_grams: 100\nlength_metres: 295\nneedle_size_mm: 4\nfibre_type: \"Acrylic\"\nbuy_cost: 140\nsell_price: 220\nimage: \"stylecraft_special.jpeg\"\n\n\n"
     },
     {
       "type": "rectangle",
@@ -268,8 +268,8 @@
     },
     {
       "type": "text",
-      "version": 157,
-      "versionNonce": 598600048,
+      "version": 161,
+      "versionNonce": 2070968606,
       "isDeleted": false,
       "id": "CAOa1V_p064FfzjrN5Hir",
       "fillStyle": "hachure",
@@ -278,8 +278,8 @@
       "roughness": 1,
       "opacity": 100,
       "angle": 0,
-      "x": 1015.72509765625,
-      "y": 191.71099853515625,
+      "x": 1016.4431762695312,
+      "y": 192.81039428710938,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
       "width": 224,
@@ -288,17 +288,17 @@
       "groupIds": [],
       "roundness": null,
       "boundElements": [],
-      "updated": 1676740054054,
+      "updated": 1676799292869,
       "link": null,
       "locked": false,
       "fontSize": 16,
       "fontFamily": 2,
-      "text": "id: 1\nname: \"Stylecraft\"\nlast_payment_date: 19/01/2023\nbalance_due: 150.00\n",
+      "text": "id: 1\nname: \"Stylecraft\"\nlast_payment_date: 19/01/2023\nbalance_due: 15000\n",
       "baseline": 86,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "id: 1\nname: \"Stylecraft\"\nlast_payment_date: 19/01/2023\nbalance_due: 150.00\n"
+      "originalText": "id: 1\nname: \"Stylecraft\"\nlast_payment_date: 19/01/2023\nbalance_due: 15000\n"
     },
     {
       "type": "arrow",
@@ -497,8 +497,8 @@
     },
     {
       "type": "arrow",
-      "version": 775,
-      "versionNonce": 168887184,
+      "version": 787,
+      "versionNonce": 630530242,
       "isDeleted": false,
       "id": "paYQ7wYeKfZ7I9cGIc-zM",
       "fillStyle": "hachure",
@@ -507,19 +507,19 @@
       "roughness": 1,
       "opacity": 100,
       "angle": 0,
-      "x": 246.57100999246418,
-      "y": 260.88768379246187,
+      "x": 246.57100999246413,
+      "y": 261.28886624213055,
       "strokeColor": "#000000",
       "backgroundColor": "transparent",
-      "width": 148.74579657048523,
-      "height": 7.542740821697919,
+      "width": 149.41730535954778,
+      "height": 7.901263341081858,
       "seed": 1200625498,
       "groupIds": [],
       "roundness": {
         "type": 2
       },
       "boundElements": [],
-      "updated": 1676740047688,
+      "updated": 1676799286987,
       "link": null,
       "locked": false,
       "startBinding": {
@@ -541,8 +541,8 @@
           0
         ],
         [
-          148.74579657048523,
-          7.542740821697919
+          149.41730535954778,
+          7.901263341081858
         ]
       ]
     }

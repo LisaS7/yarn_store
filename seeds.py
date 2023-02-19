@@ -5,15 +5,15 @@ from datetime import datetime as dt
 
 from repositories import manufacturer_repository, yarn_repository, colour_repository
 
-manufacturer_repository.delete_all()
-yarn_repository.delete_all()
 colour_repository.delete_all()
+yarn_repository.delete_all()
+manufacturer_repository.delete_all()
 
 ####----- MANUFACTURERS -----####
 
-caron = Manufacturer("Caron", dt(2023, 1, 5), 350.00)
+caron = Manufacturer("Caron", dt(2023, 1, 5), 35000)
 cascade = Manufacturer("Cascade", dt(2022, 12, 15), 0)
-sirdar = Manufacturer("Sirdar", dt(2022, 6, 28), 578.00)
+sirdar = Manufacturer("Sirdar", dt(2022, 6, 28), 57800)
 manufacturer_repository.save(caron)
 manufacturer_repository.save(cascade)
 manufacturer_repository.save(sirdar)
@@ -29,8 +29,8 @@ sirdar_yarn1 = Yarn(
     72,
     10,
     "20% wool",
-    2.50,
-    3.50,
+    250,
+    350,
     "sirdar_hayfield_sc.jpeg",
 )
 caron_yarn1 = Yarn(
@@ -41,8 +41,8 @@ caron_yarn1 = Yarn(
     485,
     4.5,
     "60% cotton, 40% acrylic",
-    9.00,
-    12.99,
+    900,
+    1299,
     "caron_cotton_angel_cakes.jpeg",
 )
 cascade_yarn1 = Yarn(
@@ -53,8 +53,8 @@ cascade_yarn1 = Yarn(
     400,
     3.25,
     "75% wool, 25% nylon",
-    7.60,
-    8.99,
+    760,
+    899,
     "cascade_heritage.jpeg",
 )
 cascade_yarn2 = Yarn(
@@ -65,8 +65,8 @@ cascade_yarn2 = Yarn(
     200,
     5.5,
     "70% cotton, 30% wool",
-    7.20,
-    8.99,
+    720,
+    899,
     "cascade_cantata.jpeg",
 )
 cascade_yarn3 = Yarn(
@@ -77,8 +77,8 @@ cascade_yarn3 = Yarn(
     200,
     4.5,
     "100% wool",
-    8.50,
-    8.99,
+    850,
+    899,
     "cascade_superwash.jpeg",
 )
 yarn_repository.save(sirdar_yarn1)
