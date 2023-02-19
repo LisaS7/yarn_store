@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+<header>
+  <h2>All Yarn Colours</h2>
+</header>
+
+<table class="colour-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Colour</th>
+      <th>Quantity</th>
+      <th>Yarn</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for colour in colours %}
+    <tr>
+      <td>{{colour.name}}</td>
+      <td>
+        <span
+          class="material-symbols-outlined"
+          style="color: {{colour.hex_code}}"
+        >
+          circle
+        </span>
+      </td>
+      <td>{{colour.stock_quantity}}</td>
+      <td>
+        <a href="{{ url_for('yarns.detail', id=colour.yarn.id) }}"
+          >{{colour.yarn.manufacturer.name}} - {{colour.yarn.name}}</a
+        >
+      </td>
+      <td>
+        <a href=""><span class="material-symbols-outlined"> edit </span></a>
+      </td>
+      <td>
+        <a href=""><span class="material-symbols-outlined"> close </span></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

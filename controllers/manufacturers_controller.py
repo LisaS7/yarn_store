@@ -23,7 +23,7 @@ def detail(id):
 def create_manufacturer():
     if request.method == "POST":
         name = request.form["name"]
-        balance_due = int(request.form["balance_due"]) * 100
+        balance_due = int(request.form["balance_due"].replace(".", ""))
         last_payment_date = Manufacturer.form_date_to_datetime(
             request.form["last_payment_date"]
         )
@@ -44,7 +44,7 @@ def delete_manufacturer(id):
 def edit_manufacturer(id):
     if request.method == "POST":
         name = request.form["name"]
-        balance_due = int(request.form["balance_due"]) * 100
+        balance_due = int(request.form["balance_due"].replace(".", ""))
 
         last_payment_date = Manufacturer.form_date_to_datetime(
             request.form["last_payment_date"]

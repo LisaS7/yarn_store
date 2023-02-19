@@ -1,7 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <header>
   <h2>All Yarns</h2>
-  <!-- TODO -->
   <a href="{{ url_for('yarns.create_yarn') }}"><button>Add Yarn</button></a>
 </header>
 
@@ -33,7 +32,7 @@
           ><img
             class="icon-image"
             src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
-            alt="hanks of yarn in a basket"
+            alt="yarn icon"
         /></a>
       </td>
     </tr>

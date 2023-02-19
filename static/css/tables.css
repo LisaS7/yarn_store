@@ -24,7 +24,9 @@ th, td {
     white-space: nowrap;
 }
 
-.manufacturer-table td:nth-child(4), .yarn-table td:nth-child(8) {
+.manufacturer-table td:nth-child(4), 
+.yarn-table td:nth-child(8), 
+.colour-table {
     text-align: center;
 }
 

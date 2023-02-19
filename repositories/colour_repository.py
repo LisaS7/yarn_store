@@ -1,23 +1,30 @@
 from db.run_sql import run_sql
 from config import colours_table_name as TABLE_NAME, colours_fields as FIELDS
+from repositories import yarn_repository
+from models.colour import Colour
 
 number_of_fields = len(FIELDS.split(","))
 placeholders = ", ".join(["%s"] * number_of_fields)
 
-from models.colour import Colour
 
+def select_all():
+    colours = []
 
-# def select_all():
-#     tasks = []
+    sql = f"SELECT * FROM {TABLE_NAME}"
+    results = run_sql(sql)
 
-#     sql = f"SELECT * FROM {TABLE_NAME}"
-#     results = run_sql(sql)
-
-#     for row in results:
-#         # create object
-#         # append to list
-#         pass
-#     return tasks
+    for row in results:
+        yarn = yarn_repository.select(row["yarn_id"])
+        print(yarn)
+        colour = Colour(
+            row["name"],
+            row["hex_code"],
+            row["stock_quantity"],
+            yarn,
+            row["id"],
+        )
+        colours.append(colour)
+    return colours
 
 
 # def select(id):

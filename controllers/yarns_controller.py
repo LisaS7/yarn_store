@@ -28,8 +28,8 @@ def create_yarn():
         length = int(request.form["length"])
         needle_size = float(request.form["needle_size"])
         fibre_type = request.form["fibre_type"]
-        buy_cost = int(request.form["buy_cost"]) * 100
-        sell_price = int(request.form["sell_price"]) * 100
+        buy_cost = int(request.form["buy_cost"].replace(".", ""))
+        sell_price = int(request.form["sell_price"].replace(".", ""))
 
         image = request.files["image"]
         Yarn.save_image(image)
@@ -71,8 +71,8 @@ def edit_yarn(id):
         length = int(request.form["length"])
         needle_size = float(request.form["needle_size"])
         fibre_type = request.form["fibre_type"]
-        buy_cost = int(request.form["buy_cost"]) * 100
-        sell_price = int(request.form["sell_price"]) * 100
+        buy_cost = int(request.form["buy_cost"].replace(".", ""))
+        sell_price = int(request.form["sell_price"].replace(".", ""))
 
         image = request.files["image"]
         Yarn.save_image(image)

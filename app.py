@@ -1,10 +1,12 @@
 from flask import Flask, render_template
 from controllers.manufacturers_controller import manufacturers_blueprint
 from controllers.yarns_controller import yarns_blueprint
+from controllers.colour_controller import colour_blueprint
 
 app = Flask(__name__)
 app.register_blueprint(manufacturers_blueprint)
 app.register_blueprint(yarns_blueprint)
+app.register_blueprint(colour_blueprint)
 
 
 @app.route("/")
