@@ -8,5 +8,10 @@ yarns_blueprint = Blueprint("yarns", __name__, url_prefix="/yarns")
 @yarns_blueprint.route("/")
 def yarns():
     yarns = yarn_repository.select_all()
-    print(yarns)
     return render_template("/yarns/all.html", yarns=yarns)
+
+
+@yarns_blueprint.route("/<id>")
+def detail(id):
+    yarn = yarn_repository.select(id)
+    return render_template("/yarns/detail.html", yarn=yarn)

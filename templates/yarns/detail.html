@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block content %}
+
+<section>
+  <aside class="details-card">
+    <h2>{{yarn.manufacturer.name}} - {{ yarn.name }}</h2>
+    <div class="details-content">
+      <figure>
+        <img
+          src="{{ url_for('static', filename='/images/yarns/' + yarn.image) }}"
+          alt=""
+        />
+      </figure>
+
+      <aside>
+        <div>
+          Yarn Weight:
+          <h4>{{ yarn.yarn_weight }}</h4>
+        </div>
+        <div>
+          Ball Weight:
+          <h4>{{ yarn.ball_weight_grams }}g</h4>
+        </div>
+        <div>
+          Length:
+          <h4>{{ yarn.length_metres }}m</h4>
+        </div>
+        <div>
+          Needle Size:
+          <h4>{{ yarn.needle_size_mm }}mm</h4>
+        </div>
+      </aside>
+      <aside>
+        <div>
+          Fibre Type:
+          <h4>{{ yarn.fibre_type }}</h4>
+        </div>
+        <div>
+          Buy Cost:
+          <h4>{{ yarn.format_currency(yarn.buy_cost) }}</h4>
+        </div>
+        <div>
+          Sell Price:
+          <h4>{{ yarn.format_currency(yarn.sell_price) }}</h4>
+        </div>
+      </aside>
+    </div>
+    <div class="details-controls">
+      <a href="">
+        <span class="material-symbols-outlined details-icon">edit</span>
+      </a>
+      <a href="">
+        <span class="material-symbols-outlined details-icon"> delete </span>
+      </a>
+    </div>
+  </aside>
+</section>
+{% endblock content %}

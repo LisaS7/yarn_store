@@ -111,13 +111,28 @@ footer a {
 
 .details-content {
     display: flex;
+    align-items: flex-start;
     gap: 1.5rem;
     border-top: 1px solid var(--dark2);
     border-bottom: 1px solid var(--dark2);
+    padding: 1rem;
+}
+
+.details-content img {
+    width: 5rem;
+    border-radius: 5px;
+}
+
+.details-content aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
 }
 
 .details-content h4 {
     color: var(--mid);
+    margin: 0;
 }
 
 .details-controls {

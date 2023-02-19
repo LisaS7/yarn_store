@@ -34,15 +34,27 @@ def select_all():
     return yarns
 
 
-# def select(id):
-#     sql = f"SELECT * FROM {TABLE_NAME} WHERE id = %s"
-#     values = [id]
-#     results = run_sql(sql, values)
+def select(id):
+    sql = f"SELECT * FROM {TABLE_NAME} WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
 
-#     if results:
-#         result = results[0]
-#         # create object
-#         # return object
+    if result:
+        manufacturer = manufacturer_repository.select(result["manufacturer_id"])
+        yarn = Yarn(
+            result["name"],
+            manufacturer,
+            result["yarn_weight"],
+            result["ball_weight_grams"],
+            result["length_metres"],
+            result["needle_size_mm"],
+            result["fibre_type"],
+            result["buy_cost"],
+            result["sell_price"],
+            result["image"],
+            result["id"],
+        )
+        return yarn
 
 
 def delete_all():

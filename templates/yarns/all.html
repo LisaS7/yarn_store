@@ -31,11 +31,11 @@
       <td>{{yarn.format_currency(yarn.buy_cost)}}</td>
       <td>{{yarn.format_currency(yarn.sell_price)}}</td>
       <td>
-        <a href="{{ url_for('yarns.detail') }}"
+        <a href="{{ url_for('yarns.detail', id=yarn.id) }}"
           ><img
             class="icon-image"
             src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
-            alt=""
+            alt="hanks of yarn in a basket"
         /></a>
       </td>
     </tr>
