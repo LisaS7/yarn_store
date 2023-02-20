@@ -7,6 +7,7 @@ app = Flask(__name__)
 app.register_blueprint(manufacturers_blueprint)
 app.register_blueprint(yarns_blueprint)
 app.register_blueprint(colour_blueprint)
+app.secret_key = "This Is Top Secret"
 
 
 @app.route("/")

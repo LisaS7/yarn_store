@@ -46,6 +46,27 @@ button {
     font-weight: 600;
 }
 
+/* -------- FLASH MESSAGES -------- */
+
+.flashes {
+    background-color: var(--mid1);
+    color: aliceblue;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.flashes li {
+    list-style: none;
+}
+
+.flashes li:before {
+    content: '✓';
+  }
+
+.flashes span {
+    margin-left: 1rem;
+}
+
 
 /* -------- NAVBAR -------- */
 

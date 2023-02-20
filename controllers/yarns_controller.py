@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, request, redirect, flash
 from repositories import yarn_repository, manufacturer_repository, colour_repository
 from models.yarn import Yarn
 from config import yarn_weights
@@ -48,6 +48,7 @@ def create_yarn():
             image.filename,
         )
         yarn_repository.save(new_yarn)
+        flash("Yarn added")
         return redirect("/yarns/")
 
     manufacturers = manufacturer_repository.select_all()
@@ -59,6 +60,7 @@ def create_yarn():
 @yarns_blueprint.route("/delete/<id>")
 def delete_yarn(id):
     yarn_repository.delete(id)
+    flash("Yarn deleted")
     return redirect("/yarns/")
 
 
@@ -92,6 +94,7 @@ def edit_yarn(id):
             id,
         )
         yarn_repository.update(yarn)
+        flash("Yarn updated")
         return redirect("/yarns/" + id)
     yarn = yarn_repository.select(id)
     manufacturers = manufacturer_repository.select_all()

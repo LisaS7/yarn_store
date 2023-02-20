@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, request, redirect, flash
 from repositories import manufacturer_repository
 from models.manufacturer import Manufacturer
 
@@ -29,6 +29,7 @@ def create_manufacturer():
         )
 
         new_manufacturer = Manufacturer(name, last_payment_date, balance_due)
+        flash("Manufacturer added")
         manufacturer_repository.save(new_manufacturer)
         return redirect("/manufacturers/")
     return render_template("/manufacturers/new.html")
@@ -37,6 +38,7 @@ def create_manufacturer():
 @manufacturers_blueprint.route("/delete/<id>")
 def delete_manufacturer(id):
     manufacturer_repository.delete(id)
+    flash("Manufacturer deleted")
     return redirect("/manufacturers/")
 
 
@@ -52,6 +54,7 @@ def edit_manufacturer(id):
 
         manufacturer = Manufacturer(name, last_payment_date, balance_due, id)
         manufacturer_repository.update(manufacturer)
+        flash("Manufacturer updated")
         return redirect("/manufacturers/")
 
     manufacturer = manufacturer_repository.select(id)

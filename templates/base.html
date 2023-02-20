@@ -28,7 +28,19 @@
           </li>
         </ul>
       </nav>
-      <section>{% block content %} {% endblock content %}</section>
+      <section>
+        {% with messages =
+          get_flashed_messages() %} {% if messages %}
+          <ul class="flashes">
+            {% for message in messages %}
+            <li><span>{{ message }}</span></li>
+            {% endfor %}
+          </ul>
+          {% endif %} {% endwith %}
+        
+        {% block content %} {% endblock content %}
+      
+      </section>
     </main>
     <footer>
       <a

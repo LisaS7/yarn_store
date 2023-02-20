@@ -1,8 +1,9 @@
 {% extends 'base.html' %} {% block content %}
+
 <section>
   <h1>New Colour</h1>
   <form
-    action="{{ url_for('colours.create_colour') }}"
+    action="{{ url_for('colours.create_colour', yarn_id=yarn.id) }}"
     method="post"
     enctype="multipart/form-data"
   >
@@ -20,7 +21,14 @@
       value="{{yarn.manufacturer.name}} - {{yarn.name}}"
       disabled
     />
-    <div class="submit-button"><button type="submit">Submit</button></div>
+    <div class="submit-button">
+      <button type="submit" name="submit">Save</button>
+    </div>
+    <div class="submit-button">
+      <button type="submit" name="submit-another" value="1">
+        Save And Add Another
+      </button>
+    </div>
   </form>
 </section>
 
