@@ -30,6 +30,11 @@ th, td {
     text-align: center;
 }
 
+.colour-table {
+    margin-top: 0.7rem;
+    margin-bottom: 6rem;
+}
+
 
 .icon-image {
     width: 2rem;

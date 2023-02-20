@@ -2,6 +2,8 @@
 
 form {
     display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
 }
 
 form img {
@@ -14,8 +16,8 @@ input {
     background-color: #f4f2f2;
 }
 
-label {
-    margin: 1rem 0;
+input#colour {
+    padding: 0;
 }
 
 select {

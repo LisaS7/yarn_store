@@ -154,10 +154,16 @@ footer a {
 }
 
 .colour-yarn-details {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.colour-yarn-details p {
+    margin: 0;
     padding: 0.5rem;
     border: 1px solid var(--dark);
     border-radius: 5px;
-    display: inline-block;
+    font-size: 0.7rem;
 }
 
 .colour-yarn-details a {

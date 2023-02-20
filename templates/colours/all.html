@@ -1,13 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 <header>
   <h2>All Yarn Colours</h2>
+  <a href="{{ url_for('colours.create_colour') }}"
+    ><button>Add Colour</button></a
+  >
 </header>
 
 {% for group in yarn_groups %}
 <details open>
   <summary>{{group}}</summary>
-  <p class="colour-yarn-details"><a href="{{ url_for('yarns.detail', id=yarn_groups[group][0].yarn.id) }}">View Yarn Details</a></p>
-    
+  <section class="colour-yarn-details">
+    <p><a href="{{ url_for('yarns.detail', id=yarn_groups[group][0].yarn.id) }}">View Yarn Details</a></p>
+  </section>
   <table class="colour-table">
     <thead>
       <tr>
@@ -35,7 +39,7 @@
       <a href=""><span class="material-symbols-outlined"> edit </span></a>
     </td>
     <td>
-      <a href=""><span class="material-symbols-outlined"> close </span></a>
+      <a href="{{ url_for('colours.delete', id=colour.id) }}"><span class="material-symbols-outlined"> close </span></a>
     </td>
     </tr>
     {% endfor %}
