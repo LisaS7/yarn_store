@@ -23,7 +23,9 @@ def colours():
 @colour_blueprint.route("/new/")
 @colour_blueprint.route("/new/<yarn_id>", methods=["GET", "POST"])
 def create_colour(yarn_id):
+
     yarn = yarn_repository.select(yarn_id)
+
     if request.method == "POST":
         name = request.form["name"]
         hex_code = request.form["colour"]
@@ -31,6 +33,7 @@ def create_colour(yarn_id):
         colour = Colour(name, hex_code, quantity, yarn)
         colour_repository.save(colour)
         return redirect("/colours/")
+
     return render_template("/colours/new.html", yarn=yarn)
 
 
@@ -38,3 +41,20 @@ def create_colour(yarn_id):
 def delete(id):
     colour_repository.delete(id)
     return redirect("/colours/")
+
+
+@colour_blueprint.route("/edit/<id>", methods=["GET", "POST"])
+def edit_colour(id):
+    if request.method == "POST":
+        yarn = yarn_repository.select(request.form["yarn"])
+        name = request.form["name"]
+        hex_code = request.form["colour"]
+        quantity = int(request.form["quantity"])
+
+        colour = Colour(name, hex_code, quantity, yarn, id)
+        colour_repository.update(colour)
+        return redirect("/colours/")
+
+    colour = colour_repository.select(id)
+    yarns = yarn_repository.select_all()
+    return render_template("/colours/edit.html", colour=colour, yarns=yarns)

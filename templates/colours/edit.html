@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+<section>
+  <h1>Edit Colour</h1>
+  <form
+    action="{{ url_for('colours.edit_colour', id=colour.id) }}"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <label for="name">Name: </label>
+    <input type="text" id="name" name="name" value="{{colour.name}}"/>
+    <label for="colour">Colour: </label>
+    <input type="color" id="colour" name="colour" value="{{colour.hex_code}}"/>
+    <label for="quantity">Quantity: </label>
+    <input type="number" id="quantity" name="quantity" value="{{colour.stock_quantity}}"/>
+    <label for="yarn">Yarn: </label>
+    <select name="yarn" id="yarn">
+      {% for yarn in yarns %}
+      <option value="{{yarn.id}}" 
+      {% if yarn.id == colour.yarn.id %}
+        selected="selected"
+      {% endif %}>{{yarn.name}}
+    </option>
+      {% endfor %}
+    </select>
+    <div class="submit-button"><button type="submit">Submit</button></div>
+  </form>
+</section>
+
+{% endblock content %}

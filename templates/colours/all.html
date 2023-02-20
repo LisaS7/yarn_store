@@ -56,7 +56,7 @@
 
     </td>
     <td>
-      <a href=""><span class="material-symbols-outlined"> edit </span></a>
+      <a href="{{ url_for('colours.edit_colour', id=colour.id) }}"><span class="material-symbols-outlined"> edit </span></a>
     </td>
     <td>
       <a href="{{ url_for('colours.delete', id=colour.id) }}"><span class="material-symbols-outlined"> close </span></a>

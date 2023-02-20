@@ -26,15 +26,21 @@ def select_all():
     return colours
 
 
-# def select(id):
-#     sql = f"SELECT * FROM {TABLE_NAME} WHERE id = %s"
-#     values = [id]
-#     results = run_sql(sql, values)
+def select(id):
+    sql = f"SELECT * FROM {TABLE_NAME} WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
 
-#     if results:
-#         result = results[0]
-#         # create object
-#         # return object
+    if result:
+        yarn = yarn_repository.select(result["yarn_id"])
+        colour = Colour(
+            result["name"],
+            result["hex_code"],
+            result["stock_quantity"],
+            yarn,
+            result["id"],
+        )
+        return colour
 
 
 def delete_all():
@@ -56,10 +62,16 @@ def save(colour):
     colour.id = result[0]["id"]
 
 
-# def update(task):
-#     sql = f"""UPDATE {TABLE_NAME} SET ({FIELDS}) = ({placeholders}) WHERE id = %s"""
-#     values = []
-#     run_sql(sql, values)
+def update(colour):
+    sql = f"""UPDATE {TABLE_NAME} SET ({FIELDS}) = ({placeholders}) WHERE id = %s"""
+    values = [
+        colour.name,
+        colour.hex_code,
+        colour.stock_quantity,
+        colour.yarn.id,
+        colour.id,
+    ]
+    run_sql(sql, values)
 
 
 def select_by_yarn(yarn_id):
