@@ -8,20 +8,32 @@ class TestColour(unittest.TestCase):
         self.colour = test_colour
 
     def test_colour_has_name(self):
-        self.assertEqual(self.colour.name, "Caron Cakes")
+        expected = "Caron Cakes"
+        actual = self.colour.name
+        self.assertEqual(expected, actual)
 
     def test_colour_has_hex_code(self):
-        self.assertEqual(self.colour.hex_code, "#111217")
+        expected = "#111217"
+        actual = self.colour.hex_code
+        self.assertEqual(expected, actual)
 
     def test_colour_has_stock_quantity(self):
-        self.assertEqual(self.colour.stock_quantity, 12)
+        expected = 12
+        actual = self.colour.stock_quantity
+        self.assertEqual(expected, actual)
 
     def test_colour_has_yarn(self):
-        self.assertEqual(self.colour.yarn, test_yarn)
+        expected = test_yarn
+        actual = self.colour.yarn
+        self.assertEqual(expected, actual)
 
     def test_colour_has_id(self):
-        self.assertEqual(self.colour.id, 3)
+        expected = 3
+        actual = self.colour.id
+        self.assertEqual(expected, actual)
 
     def test_increase_stock(self):
+        expected = 17
         self.colour.increase_stock(5)
-        self.assertEqual(self.colour.stock_quantity, 17)
+        actual = self.colour.stock_quantity
+        self.assertEqual(expected, actual)

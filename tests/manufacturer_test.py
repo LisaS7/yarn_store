@@ -8,26 +8,41 @@ class TestManufacturer(unittest.TestCase):
         self.manufacturer = test_manufacturer
 
     def test_mfr_has_name(self):
-        self.assertEqual(self.manufacturer.name, "Caron")
+        expected = "Caron"
+        actual = self.manufacturer.name
+        self.assertEqual(expected, actual)
 
     def test_mfr_has_last_payment_date(self):
-        self.assertEqual(self.manufacturer.last_payment_date, dt(2023, 1, 12))
+        expected = dt(2023, 1, 12)
+        actual = self.manufacturer.last_payment_date
+        self.assertEqual(expected, actual)
 
     def test_mfr_has_balance_due(self):
-        self.assertEqual(self.manufacturer.balance_due, 10050)
+        expected = 10050
+        actual = self.manufacturer.balance_due
+        self.assertEqual(expected, actual)
 
     def test_mfr_has_id(self):
-        self.assertEqual(self.manufacturer.id, 2)
+        expected = 2
+        actual = self.manufacturer.id
+        self.assertEqual(expected, actual)
 
     def test_mfr_format_currency(self):
-        self.assertEqual(self.manufacturer.format_currency_balance(), "£100.50")
+        expected = "£100.50"
+        actual = self.manufacturer.format_currency_balance()
+        self.assertEqual(expected, actual)
 
     def test_mfr_format_date_for_psql(self):
-        self.assertEqual(self.manufacturer.format_date_for_psql(), "2023-01-12")
+        expected = "2023-01-12"
+        actual = self.manufacturer.format_date_for_psql()
+        self.assertEqual(expected, actual)
 
     def test_mfr_format_date_for_view(self):
-        self.assertEqual(self.manufacturer.format_date_for_view(), "12 January 2023")
+        expected = "12 January 2023"
+        actual = self.manufacturer.format_date_for_view()
+        self.assertEqual(expected, actual)
 
     def test_mfr_form_date_to_datetime(self):
-        dt_date = self.manufacturer.form_date_to_datetime("2023-01-12")
-        self.assertEqual(dt_date, dt(2023, 1, 12))
+        expected = dt(2023, 1, 12)
+        actual = self.manufacturer.form_date_to_datetime("2023-01-12")
+        self.assertEqual(expected, actual)

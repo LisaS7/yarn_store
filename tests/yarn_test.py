@@ -10,7 +10,6 @@ from tests.test_data import test_yarn, test_manufacturer
 class TestYarn(unittest.TestCase):
     def setUp(self):
         self.yarn = test_yarn
-        self.test_image_location = Path.cwd() / "tests" / "test_image.jpeg"
         self.saved_image_location = (
             Path.cwd() / "static" / "images" / "yarns" / "test_image.jpeg"
         )
@@ -20,50 +19,75 @@ class TestYarn(unittest.TestCase):
             self.saved_image_location.unlink()
 
     def test_yarn_has_name(self):
-        self.assertEqual(self.yarn.name, "Caron Cakes")
+        expected = "Caron Cakes"
+        actual = self.yarn.name
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_manufacturer(self):
-        self.assertEqual(self.yarn.manufacturer, test_manufacturer)
+        expected = test_manufacturer
+        actual = self.yarn.manufacturer
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_yarn_weight(self):
-        self.assertEqual(self.yarn.yarn_weight, "DK")
+        expected = "DK"
+        actual = self.yarn.yarn_weight
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_ball_weight(self):
-        self.assertEqual(self.yarn.ball_weight_grams, 200)
+        expected = 200
+        actual = self.yarn.ball_weight_grams
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_length(self):
-        self.assertEqual(self.yarn.length_metres, 350)
+        expected = 350
+        actual = self.yarn.length_metres
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_needle_size(self):
-        self.assertEqual(self.yarn.needle_size_mm, 5)
+        expected = 5
+        actual = self.yarn.needle_size_mm
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_fibre_type(self):
-        self.assertEqual(self.yarn.fibre_type, "20% wool, 80% acrylic")
+        expected = "20% wool, 80% acrylic"
+        actual = self.yarn.fibre_type
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_buy_cost(self):
-        self.assertEqual(self.yarn.buy_cost, 750)
+        expected = 750
+        actual = self.yarn.buy_cost
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_sell_price(self):
-        self.assertEqual(self.yarn.sell_price, 999)
+        expected = 999
+        actual = self.yarn.sell_price
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_profit(self):
-        self.assertEqual(self.yarn.profit, 249)
+        expected = 249
+        actual = self.yarn.profit
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_image(self):
-        self.assertEqual(self.yarn.image, "test_image.jpeg")
+        expected = "test_image.jpeg"
+        actual = self.yarn.image
+        self.assertEqual(expected, actual)
 
     def test_yarn_has_id(self):
-        self.assertEqual(self.yarn.id, 7)
+        expected = 7
+        actual = self.yarn.id
+        self.assertEqual(expected, actual)
 
     def test_save_image(self):
-        with open(self.test_image_location, "rb") as f:
+        test_image_location = Path.cwd() / "tests" / "test_image.jpeg"
+
+        with open(test_image_location, "rb") as f:
             image = FileStorage(f)
             image.filename = "test_image.jpeg"
             self.yarn.save_image(image)
-        self.assertTrue(
-            filecmp.cmp(self.test_image_location, self.saved_image_location)
-        )
+        self.assertTrue(filecmp.cmp(test_image_location, self.saved_image_location))
 
     def test_format_currency(self):
-        currency_string = self.yarn.format_currency(self.yarn.buy_cost)
-        self.assertEqual(currency_string, "£7.50")
+        expected = "£7.50"
+        actual = self.yarn.format_currency(self.yarn.buy_cost)
+        self.assertEqual(expected, actual)
