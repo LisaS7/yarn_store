@@ -7,39 +7,24 @@
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="stylesheet" href="/static/css/tables.css" />
     <link rel="stylesheet" href="/static/css/forms.css" />
-    <link rel="stylesheet" href="/static/css/icons.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    {% block head %} {% endblock head %}
     <title>Yarn</title>
   </head>
   <body>
     <main>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="{{ url_for('yarns.yarns') }}">Yarns</a></li>
-          <li>
-            <a href="{{ url_for('manufacturers.manufacturers') }}"
-            >Manufacturers</a
-            >
-            <li><a href="{{ url_for('colours.colours') }}">Yarn Colours</a></li>
-          </li>
-        </ul>
-      </nav>
+      {% include './components/navbar.html' %}
       <section>
-        {% with messages =
-          get_flashed_messages() %} {% if messages %}
-          <ul class="flashes">
-            {% for message in messages %}
-            <li><span>{{ message }}</span></li>
-            {% endfor %}
-          </ul>
-          {% endif %} {% endwith %}
-        
-        {% block content %} {% endblock content %}
-      
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+          <li><span>{{ message }}</span></li>
+          {% endfor %}
+        </ul>
+        {% endif %} {% endwith %} {% block content %} {% endblock content %}
       </section>
     </main>
     <footer>

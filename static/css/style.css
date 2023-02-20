@@ -20,6 +20,8 @@ body {
 body > main {
     background-color: var(--light1);
     min-height: calc(100vh - 100px);
+    display: flex;
+    gap: 2rem;
 }
 
 body > main > section {
@@ -67,44 +69,6 @@ button {
 
 .flashes span {
     margin-left: 1rem;
-}
-
-
-/* -------- NAVBAR -------- */
-
-nav {
-    background-color: var(--mid);
-    padding: 2rem;
-    min-width: 10rem;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--light1);
-    padding: 0.6rem;
-}
-
-nav a:hover {
-    border: 3px solid var(--mid2);
-}
-
-nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 0;
-}
-
-nav li {
-    list-style: none;
-    padding-top: 1rem;
-}
-
-/* -------- MAIN -------- */
-
-main {
-    display: flex;
-    gap: 2rem;
 }
 
 
@@ -171,9 +135,34 @@ footer a {
     justify-content: flex-end;
 }
 
+/* -------- ICONS -------- */
+
 .colour-yarn-details .material-symbols-outlined {
     font-size: 2rem;
     margin-top: 0.2rem;
     margin-right: 1rem;
 }
 
+.colour-dots .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.material-symbols-outlined {
+    color: var(--mid1);
+}
+
+figcaption.colour-dots {
+    margin-top: 1rem;
+}
+
+.stock-low-icon {
+    color:rgb(199, 132, 8);
+}
+
+.stock-zero-icon {
+    color:darkred;
+}

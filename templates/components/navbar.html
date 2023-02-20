@@ -1,0 +1,15 @@
+{% block head %}
+<link rel="stylesheet" href="/static/css/navbar.css" />
+{% endblock head %}
+<nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="{{ url_for('yarns.yarns') }}">Yarns</a></li>
+      <li>
+        <a href="{{ url_for('manufacturers.manufacturers') }}"
+        >Manufacturers</a
+        >
+        <li><a href="{{ url_for('colours.colours') }}">Yarn Colours</a></li>
+      </li>
+    </ul>
+  </nav>

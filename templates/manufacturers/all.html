@@ -23,11 +23,8 @@
       <td>{{manufacturer.format_currency_balance()}}</td>
       <td>
         <a href="{{ url_for('manufacturers.detail', id=manufacturer.id) }}"
-          ><img
-            class="icon-image"
-            src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
-            alt="yarn ball icon"
-        /></a>
+          ><span class="material-symbols-outlined"> factory </span></a
+        >
       </td>
     </tr>
     {% endfor %}
