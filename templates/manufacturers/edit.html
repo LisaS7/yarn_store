@@ -18,6 +18,7 @@
     <label for="genre">Outstanding Balance: </label>
     <input
       type="number"
+      min="0"
       id="balance_due"
       name="balance_due"
       value="{{ manufacturer.format_currency_balance()[1:] }}"
