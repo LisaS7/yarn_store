@@ -1,15 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 
 <section>
-  <aside class="details-card">
+  <aside class="details-card p1">
     <h2>{{yarn.manufacturer.name}} - {{ yarn.name }}</h2>
-    <section class="details-content">
+    <section class="details-content p1">
       <img
         src="{{ url_for('static', filename='/images/yarns/' + yarn.image) }}"
         alt="yarn product image"
       />
 
-      <aside>
+      <aside class="flex-col flex-gap-1 p1">
         <div>
           Yarn Weight:
           <h4>{{ yarn.yarn_weight }}</h4>
@@ -31,7 +31,7 @@
           <h4>{{ yarn.fibre_type }}</h4>
         </div>
       </aside>
-      <aside>
+      <aside class="flex-col flex-gap-1 p1">
         <div>
           Buy Cost:
           <h4>{{ yarn.format_currency(yarn.buy_cost) }}</h4>
@@ -46,7 +46,7 @@
         </div>
       </aside>
     </section>
-    <section class="details-stock colour-dots">
+    <section class="flex-col colour-dots">
       <h3>Stock:</h3>
       <table class="stock-table">
         <thead>

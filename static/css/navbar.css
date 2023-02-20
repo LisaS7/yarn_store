@@ -11,6 +11,8 @@ nav {
 }
 
 nav a {
+    display: flex;
+    gap: 1rem;
     text-decoration: none;
     color: var(--light1);
     padding: 0.6rem;
@@ -31,3 +33,9 @@ nav li {
     list-style: none;
     padding-top: 1rem;
 }
+
+nav span.material-symbols-outlined {
+    color: #e3a3ac;
+    font-size: 2rem;
+}
+

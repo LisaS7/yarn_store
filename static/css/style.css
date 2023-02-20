@@ -40,13 +40,13 @@ h1 {
     font-size: 2rem;
 }
 
-.bold-button {
-    border: none;
-    border-radius: 5px;
+.p1 {
     padding: 1rem;
-    background-color: var(--dark);
-    color: var(--light1);
-    font-weight: 600;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
 }
 
 .flex-gap-1 {
@@ -96,7 +96,6 @@ footer a {
 .details-card {
     border: 1px solid var(--dark);
     margin: 3rem;
-    padding: 1rem;
     box-shadow: 0.3rem 0.3rem 1rem 0.5rem #5c5c5c3c;
     background-color: var(--light2);
     color: var(--dark);
@@ -109,19 +108,11 @@ footer a {
     gap: 1.5rem;
     border-top: 1px solid var(--dark2);
     border-bottom: 1px solid var(--dark2);
-    padding: 1rem;
 }
 
 .details-content img {
     width: 6rem;
     border-radius: 5px;
-}
-
-.details-content aside {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
 }
 
 .details-content h4 {
@@ -140,10 +131,6 @@ footer a {
     justify-content: flex-end;
 }
 
-.details-stock {
-    display: flex;
-    flex-direction: column;
-}
 
 /* -------- ICONS -------- */
 

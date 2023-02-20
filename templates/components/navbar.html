@@ -2,13 +2,27 @@
 <link rel="stylesheet" href="/static/css/navbar.css" />
 {% endblock head %}
 <nav>
-  <h2 id="nav-title">Loops & Strings</h2>
+  <h2 id="nav-title"><a href="/">Loops & Strings</a></h2>
   <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="{{ url_for('yarns.yarns') }}">Yarns</a></li>
     <li>
-      <a href="{{ url_for('manufacturers.manufacturers') }}">Manufacturers</a>
+      <a href="{{ url_for('yarns.yarns') }}"
+        ><img
+          class="icon-image"
+          src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
+          alt="yarn icon"
+        />Yarns</a
+      >
     </li>
-    <li><a href="{{ url_for('colours.colours') }}">Yarn Colours</a></li>
+    <li>
+      <a href="{{ url_for('manufacturers.manufacturers') }}"
+        ><span class="material-symbols-outlined"> factory </span>
+        Manufacturers</a
+      >
+    </li>
+    <li>
+      <a href="{{ url_for('colours.colours') }}"
+        ><span class="material-symbols-outlined"> palette </span>Yarn Colours</a
+      >
+    </li>
   </ul>
 </nav>

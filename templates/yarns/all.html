@@ -2,8 +2,14 @@
 <header>
   <h2>All Yarns</h2>
   <a href="{{ url_for('yarns.create_yarn') }}"
-    ><button class="bold-button">Add Yarn</button></a
-  >
+    ><button class="p1">
+      <span class="material-symbols-outlined"> add </span
+      ><img
+        class="icon-image"
+        src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
+        alt="yarn icon"
+      /></button
+  ></a>
 </header>
 
 <table class="yarn-table">

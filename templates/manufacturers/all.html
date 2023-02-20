@@ -2,8 +2,11 @@
 <header>
   <h2>All Manufacturers</h2>
   <a href="{{ url_for('manufacturers.create_manufacturer') }}"
-    ><button class="bold-button">Add Manufacturer</button></a
-  >
+    ><button class="p1">
+      <span class="material-symbols-outlined"> add </span
+      ><span class="material-symbols-outlined"> factory </span>
+    </button>
+  </a>
 </header>
 
 <table class="manufacturer-table">
@@ -12,7 +15,7 @@
       <th>Name</th>
       <th>Last Payment Date</th>
       <th>Balance Due</th>
-      <th>View Details</th>
+      <th>Details</th>
     </tr>
   </thead>
   <tbody>
