@@ -3,10 +3,10 @@ from flask import Blueprint, render_template, request, redirect, flash
 from repositories import colour_repository, yarn_repository
 from models.colour import Colour
 
-colour_blueprint = Blueprint("colours", __name__, url_prefix="/colours")
+colours_blueprint = Blueprint("colours", __name__, url_prefix="/colours")
 
 
-@colour_blueprint.route("/")
+@colours_blueprint.route("/")
 def colours():
     yarn_groups = defaultdict(list)
     colours = colour_repository.select_all()
@@ -20,8 +20,8 @@ def colours():
     )
 
 
-@colour_blueprint.route("/new/", methods=["GET", "POST"])
-@colour_blueprint.route("/new/<yarn_id>", methods=["GET", "POST"])
+@colours_blueprint.route("/new/", methods=["GET", "POST"])
+@colours_blueprint.route("/new/<yarn_id>", methods=["GET", "POST"])
 def create_colour(yarn_id):
 
     yarn = yarn_repository.select(yarn_id)
@@ -41,14 +41,14 @@ def create_colour(yarn_id):
     return render_template("/colours/new.html", yarn=yarn)
 
 
-@colour_blueprint.route("/delete/<id>")
+@colours_blueprint.route("/delete/<id>")
 def delete(id):
     colour_repository.delete(id)
     flash("Colour deleted!")
     return redirect("/colours/")
 
 
-@colour_blueprint.route("/edit/<id>", methods=["GET", "POST"])
+@colours_blueprint.route("/edit/<id>", methods=["GET", "POST"])
 def edit_colour(id):
     if request.method == "POST":
         yarn = yarn_repository.select(request.form["yarn"])

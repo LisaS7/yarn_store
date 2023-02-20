@@ -1,0 +1,11 @@
+<form
+  class="order-stock"
+  action="{{ url_for('yarns.order_stock', colour_id=colour.id) }}"
+  method="post"
+  enctype="multipart/form-data"
+>
+  <input type="number" name="quantity" />
+  <button id="plus-stock" type="submit">
+    <span class="material-symbols-outlined"> add </span>
+  </button>
+</form>

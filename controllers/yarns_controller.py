@@ -104,3 +104,17 @@ def edit_yarn(id):
         manufacturers=manufacturers,
         yarn_weights=yarn_weights,
     )
+
+
+@yarns_blueprint.route("/order/<colour_id>", methods=["GET", "POST"])
+def order_stock(colour_id):
+    if request.method == "POST":
+        colour = colour_repository.select(colour_id)
+        quantity = int(request.form["quantity"])
+        cost = quantity * colour.yarn.buy_cost
+        colour.yarn.manufacturer.add_to_balance(cost)
+        colour.increase_stock(quantity)
+        print(colour)
+        colour_repository.update(colour)
+        manufacturer_repository.update(colour.yarn.manufacturer)
+    return redirect(request.referrer)

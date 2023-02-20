@@ -29,3 +29,13 @@ select {
 .submit-button {
     margin-top: 2rem;
 }
+
+.order-stock > input {
+    padding: 0.5rem;
+    height: 1.5rem;
+    width: 3rem;
+}
+
+#plus-stock {
+    border: 1px solid var(--mid3);
+}

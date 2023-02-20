@@ -8,6 +8,7 @@ table {
 
 thead {
     background-color: var(--dark);
+    opacity: 0.8;
     color: var(--light1);
 }
 
@@ -26,7 +27,8 @@ th, td {
 
 .manufacturer-table td:nth-child(4), 
 .yarn-table td:nth-child(8), 
-.colour-table {
+.colour-table,
+.stock-table {
     text-align: center;
 }
 
@@ -35,6 +37,17 @@ th, td {
     margin-bottom: 6rem;
 }
 
+.stock-table {
+    margin-top: 0;
+    margin-left: 2rem;
+    box-shadow: none;
+}
+
+.stock-table thead {
+    background-color: var(--light2);
+    color: var(--dark);
+    border-bottom: 2px solid var(--dark);
+}
 
 .icon-image {
     width: 2rem;

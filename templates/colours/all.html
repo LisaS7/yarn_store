@@ -25,6 +25,7 @@
         <th>Name</th>
         <th>Colour</th>
         <th>Quantity</th>
+        <th>Order</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
@@ -53,6 +54,10 @@
         warning
         </span>
       {% endif %}
+
+    </td>
+    <td>
+      {% include '/components/order_stock.html' %}
 
     </td>
     <td>

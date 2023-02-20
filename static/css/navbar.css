@@ -4,6 +4,12 @@ nav {
     min-width: 10rem;
 }
 
+#nav-title {
+    color: var(--light1);
+    font-weight: 700;
+    border-bottom: 1px solid var(--mid3);
+}
+
 nav a {
     text-decoration: none;
     color: var(--light1);

@@ -1,7 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 <header>
   <h2>All Yarns</h2>
-  <a href="{{ url_for('yarns.create_yarn') }}"><button>Add Yarn</button></a>
+  <a href="{{ url_for('yarns.create_yarn') }}"
+    ><button class="bold-button">Add Yarn</button></a
+  >
 </header>
 
 <table class="yarn-table">

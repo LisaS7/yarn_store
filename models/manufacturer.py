@@ -10,6 +10,9 @@ class Manufacturer:
     balance_due: int
     id: Optional[int] = None
 
+    def add_to_balance(self, amount):
+        self.balance_due += amount
+
     def format_currency_balance(self):
         return "£{0:,.2f}".format(self.balance_due / 100)
 

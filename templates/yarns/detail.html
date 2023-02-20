@@ -3,27 +3,11 @@
 <section>
   <aside class="details-card">
     <h2>{{yarn.manufacturer.name}} - {{ yarn.name }}</h2>
-    <div class="details-content">
-      <figure>
-        <img
-          src="{{ url_for('static', filename='/images/yarns/' + yarn.image) }}"
-          alt="yarn product image"
-        />
-        <figcaption class="colour-dots">
-          {% for colour in colours %}
-          <span
-            class="material-symbols-outlined"
-            style="color: {{colour.hex_code}}"
-            title="{{colour.name}}"
-          >
-            circle
-          </span>
-          {% endfor %}
-          <a href="{{ url_for('colours.create_colour', yarn_id=yarn.id) }}"
-            ><span class="material-symbols-outlined"> add_circle </span></a
-          >
-        </figcaption>
-      </figure>
+    <section class="details-content">
+      <img
+        src="{{ url_for('static', filename='/images/yarns/' + yarn.image) }}"
+        alt="yarn product image"
+      />
 
       <aside>
         <div>
@@ -61,8 +45,41 @@
           <h4>{{ yarn.format_currency(yarn.profit) }}</h4>
         </div>
       </aside>
-    </div>
+    </section>
+    <section class="details-stock colour-dots">
+      <h3>Stock:</h3>
+      <table class="stock-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Quantity</th>
+            <th>Place Order</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for colour in colours %}
+          <tr>
+            <td class="flex-gap-1">
+              <span
+                class="material-symbols-outlined"
+                style="color: {{colour.hex_code}}"
+                title="{{colour.name}}"
+              >
+                circle
+              </span>
+              {{colour.name}}
+            </td>
+            <td>{{colour.stock_quantity}}</td>
+            <td>{% include '/components/order_stock.html' %}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
     <div class="details-controls">
+      <a href="{{ url_for('colours.create_colour', yarn_id=yarn.id) }}"
+        ><span class="material-symbols-outlined"> add_circle </span></a
+      >
       <a href="{{ url_for('yarns.edit_yarn', id=yarn.id) }}">
         <span class="material-symbols-outlined">edit</span>
       </a>

@@ -8,7 +8,7 @@
     --mid2: #591c32;
     --mid3: #837775;
     --light1: #ececec;
-    --light2: #d9d6d6;
+    --light2: #ede8e8;
 }
 
 body {
@@ -40,13 +40,18 @@ h1 {
     font-size: 2rem;
 }
 
-button {
+.bold-button {
     border: none;
     border-radius: 5px;
     padding: 1rem;
     background-color: var(--dark);
     color: var(--light1);
     font-weight: 600;
+}
+
+.flex-gap-1 {
+    display: flex;
+    gap: 1rem;
 }
 
 /* -------- FLASH MESSAGES -------- */
@@ -135,6 +140,11 @@ footer a {
     justify-content: flex-end;
 }
 
+.details-stock {
+    display: flex;
+    flex-direction: column;
+}
+
 /* -------- ICONS -------- */
 
 .colour-yarn-details .material-symbols-outlined {
@@ -153,10 +163,6 @@ footer a {
 
 .material-symbols-outlined {
     color: var(--mid1);
-}
-
-figcaption.colour-dots {
-    margin-top: 1rem;
 }
 
 .stock-low-icon {
