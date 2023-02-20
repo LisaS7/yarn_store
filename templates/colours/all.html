@@ -1,16 +1,23 @@
 {% extends 'base.html' %} {% block content %}
 <header>
   <h2>All Yarn Colours</h2>
-  <a href="{{ url_for('colours.create_colour') }}"
-    ><button>Add Colour</button></a
-  >
 </header>
 
 {% for group in yarn_groups %}
 <details open>
   <summary>{{group}}</summary>
   <section class="colour-yarn-details">
-    <p><a href="{{ url_for('yarns.detail', id=yarn_groups[group][0].yarn.id) }}">View Yarn Details</a></p>
+    <a href="{{ url_for('colours.create_colour', yarn_id=yarn_groups[group][0].yarn.id) }}"><span class="material-symbols-outlined" title="Add Colour">
+      add_circle
+      </span></a>
+    <a href="{{ url_for('yarns.detail', id=yarn_groups[group][0].yarn.id) }}"><img
+      class="icon-image"
+      src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
+      alt="yarn icon"
+      title="View Yarn"
+  /></a>
+  
+  
   </section>
   <table class="colour-table colour-dots">
     <thead>
