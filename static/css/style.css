@@ -19,6 +19,7 @@ body {
 
 body > main {
     background-color: var(--light1);
+    min-height: calc(100vh - 100px);
 }
 
 body > main > section {
@@ -50,6 +51,7 @@ button {
 
 .flashes {
     background-color: var(--mid1);
+    opacity: 0.5;
     color: aliceblue;
     padding: 1rem;
     border-radius: 5px;
