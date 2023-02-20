@@ -1,0 +1,29 @@
+@import "style.css";
+
+.colour-dots .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+  .details-icon {
+    color: var(--dark);
+}
+
+figcaption.colour-dots {
+    margin-top: 1rem;
+}
+
+#add-circle {
+    color: var(--mid1);
+}
+
+.stock-low-icon {
+    color:rgb(199, 132, 8);
+}
+
+.stock-zero-icon {
+    color:darkred;
+}

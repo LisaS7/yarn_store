@@ -9,3 +9,4 @@ yarn_weights = ["2ply", "4ply", "DK", "Aran", "Chunky", "Super Chunky"]
 
 colours_table_name = "colours"
 colours_fields = "name, hex_code, stock_quantity, yarn_id"
+stock_low_threshold = 10

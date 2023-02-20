@@ -46,13 +46,6 @@ button {
     font-weight: 600;
 }
 
-.colour-dots .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
-}
 
 /* -------- NAVBAR -------- */
 
@@ -150,10 +143,6 @@ footer a {
     justify-content: space-around;
 }
 
-.details-icon {
-    color: var(--dark);
-}
-
 .colour-yarn-details {
     display: flex;
     justify-content: flex-end;
@@ -165,10 +154,3 @@ footer a {
     margin-right: 1rem;
 }
 
-figcaption.colour-dots {
-    margin-top: 1rem;
-}
-
-#add-circle {
-    color: var(--mid1);
-}
