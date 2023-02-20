@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect
-from repositories import yarn_repository, manufacturer_repository
+from repositories import yarn_repository, manufacturer_repository, colour_repository
 from models.yarn import Yarn
 from config import yarn_weights
 
@@ -15,7 +15,8 @@ def yarns():
 @yarns_blueprint.route("/<id>")
 def detail(id):
     yarn = yarn_repository.select(id)
-    return render_template("/yarns/detail.html", yarn=yarn)
+    colours = colour_repository.select_by_yarn(id)
+    return render_template("/yarns/detail.html", yarn=yarn, colours=colours)
 
 
 @yarns_blueprint.route("/new", methods=["GET", "POST"])

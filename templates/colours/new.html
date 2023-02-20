@@ -13,12 +13,15 @@
     <label for="quantity">Quantity: </label>
     <input type="number" id="quantity" name="quantity" />
     <label for="yarn">Yarn: </label>
+    {% if yarn %}
+    <input type="text" id="yarn" name="yarn" value="{{yarn.name}}" disabled />
+    {% else %}
     <select name="yarn" id="yarn">
       {% for yarn in yarns %}
       <option value="{{yarn.id}}">{{yarn.name}}</option>
       {% endfor %}
     </select>
-
+    {% endif %}
     <div class="submit-button"><button type="submit">Submit</button></div>
   </form>
 </section>

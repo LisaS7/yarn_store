@@ -60,3 +60,10 @@ def save(colour):
 #     sql = f"""UPDATE {TABLE_NAME} SET ({FIELDS}) = ({placeholders}) WHERE id = %s"""
 #     values = []
 #     run_sql(sql, values)
+
+
+def select_by_yarn(yarn_id):
+    sql = f"SELECT * FROM colours WHERE yarn_id = %s"
+    values = [yarn_id]
+    result = run_sql(sql, values)
+    return result

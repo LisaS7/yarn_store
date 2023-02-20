@@ -4,9 +4,10 @@
     --dark: #2c466c;
     --dark2: #2e171d;
     --mid: #772342;
+    --mid1:#2b5a8b;
     --mid2: #591c32;
     --mid3: #837775;
-    --light1: #e2e2e2;
+    --light1: #ececec;
     --light2: #d9d6d6;
 }
 
@@ -45,7 +46,7 @@ button {
     font-weight: 600;
 }
 
-.colour-table .material-symbols-outlined {
+.colour-dots .material-symbols-outlined {
   font-variation-settings:
   'FILL' 1,
   'wght' 400,
@@ -170,3 +171,10 @@ footer a {
     text-decoration: none;
 }
 
+figcaption.colour-dots {
+    margin-top: 1rem;
+}
+
+#add-circle {
+    color: var(--mid1);
+}

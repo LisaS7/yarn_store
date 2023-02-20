@@ -9,6 +9,22 @@
           src="{{ url_for('static', filename='/images/yarns/' + yarn.image) }}"
           alt="yarn product image"
         />
+        <figcaption class="colour-dots">
+          {% for colour in colours %}
+          <span
+            class="material-symbols-outlined"
+            style="color: {{colour.hex_code}}"
+            title="{{colour.name}}"
+          >
+            circle
+          </span>
+          {% endfor %}
+          <a href="{{ url_for('colours.create_colour', yarn_id=yarn.id) }}"
+            ><span id="add-circle" class="material-symbols-outlined">
+              add_circle
+            </span></a
+          >
+        </figcaption>
       </figure>
 
       <aside>
