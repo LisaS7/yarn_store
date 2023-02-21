@@ -104,14 +104,18 @@ footer a {
 
 .details-content {
     display: flex;
-    align-items: flex-start;
     gap: 1.5rem;
     border-top: 1px solid var(--dark2);
     border-bottom: 1px solid var(--dark2);
 }
 
+#details-mfr {
+    align-items: flex-end;
+}
+
 .details-content img {
-    width: 6rem;
+    align-self: flex-start;
+    width: 10rem;
     border-radius: 5px;
 }
 

@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, flash
-from repositories import manufacturer_repository
+from repositories import manufacturer_repository, yarn_repository
 from models.manufacturer import Manufacturer
 
 manufacturers_blueprint = Blueprint(
@@ -16,7 +16,10 @@ def manufacturers():
 @manufacturers_blueprint.route("/<id>")
 def detail(id):
     manufacturer = manufacturer_repository.select(id)
-    return render_template("/manufacturers/detail.html", manufacturer=manufacturer)
+    yarns = yarn_repository.select_by_manufacturer(id)
+    return render_template(
+        "/manufacturers/detail.html", manufacturer=manufacturer, yarns=yarns
+    )
 
 
 @manufacturers_blueprint.route("/new", methods=["GET", "POST"])

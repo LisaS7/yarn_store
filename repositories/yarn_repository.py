@@ -101,3 +101,28 @@ def update(yarn):
         yarn.id,
     ]
     run_sql(sql, values)
+
+
+def select_by_manufacturer(mfr_id):
+    yarns = []
+    sql = f"SELECT * FROM {TABLE_NAME} WHERE manufacturer_id = %s"
+    values = [mfr_id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        manufacturer = manufacturer_repository.select(row["manufacturer_id"])
+        yarn = Yarn(
+            row["name"],
+            manufacturer,
+            row["yarn_weight"],
+            row["ball_weight_grams"],
+            row["length_metres"],
+            row["needle_size_mm"],
+            row["fibre_type"],
+            row["buy_cost"],
+            row["sell_price"],
+            row["image"],
+            row["id"],
+        )
+        yarns.append(yarn)
+    return yarns

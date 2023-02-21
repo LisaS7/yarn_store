@@ -27,7 +27,6 @@ def create_colour(yarn_id):
     yarn = yarn_repository.select(yarn_id)
 
     if request.method == "POST":
-        print(request.form)
         name = request.form["name"]
         hex_code = request.form["colour"]
         quantity = int(request.form["quantity"])

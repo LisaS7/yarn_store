@@ -3,11 +3,17 @@
 <section>
   <aside class="details-card p1">
     <h2>{{ manufacturer.name }}</h2>
-    <div class="details-content p1">
+    <div id="details-mfr" class="details-content p1">
         <p>Last paid:
             <h4>{{ manufacturer.format_date_for_view() }}</h4></p>
       <p>Balance to pay:
         <h4>{{ manufacturer.format_currency_balance() }}</h4></p>
+    </div>
+    <div class="details-mfr"><h3>Yarns:</h3>
+      {% for yarn in yarns %}
+        {{yarn.name}}
+      {% endfor %}
+    
     </div>
     <div class="details-controls">
         <a href="{{ url_for('manufacturers.edit_manufacturer', id=manufacturer.id) }}">

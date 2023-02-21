@@ -114,7 +114,6 @@ def order_stock(colour_id):
         cost = quantity * colour.yarn.buy_cost
         colour.yarn.manufacturer.add_to_balance(cost)
         colour.increase_stock(quantity)
-        print(colour)
         colour_repository.update(colour)
         manufacturer_repository.update(colour.yarn.manufacturer)
     return redirect(request.referrer)
