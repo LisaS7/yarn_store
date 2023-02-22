@@ -5,6 +5,7 @@ import unittest
 import filecmp
 from pathlib import Path
 from tests.test_data import test_yarn, test_manufacturer
+from models.yarn import Yarn
 
 
 class TestYarn(unittest.TestCase):
@@ -75,7 +76,19 @@ class TestYarn(unittest.TestCase):
 
     def test_yarn_default_image(self):
         expected = "none.jpeg"
-        actual = self.yarn.image
+        new_yarn = Yarn(
+            "Caron Cakes",
+            test_manufacturer,
+            "DK",
+            200,
+            350,
+            5,
+            "20% wool, 80% acrylic",
+            750,
+            999,
+            id=7,
+        )
+        actual = new_yarn.image
         self.assertEqual(expected, actual)
 
     def test_save_image(self):

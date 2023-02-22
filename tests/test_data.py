@@ -15,8 +15,7 @@ test_yarn = Yarn(
     "20% wool, 80% acrylic",
     750,
     999,
-    "test_image.jpeg",
-    7,
+    id=7,
 )
 
 test_colour = Colour("Caron Cakes", "#111217", 12, test_yarn, 3)

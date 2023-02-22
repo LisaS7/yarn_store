@@ -14,7 +14,7 @@ class Yarn:
     fibre_type: str
     buy_cost: int
     sell_price: int
-    image: Optional[str] = None
+    image: Optional[str] = "none.jpeg"
     id: Optional[int] = None
 
     def __post_init__(self):
