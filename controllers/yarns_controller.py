@@ -29,8 +29,8 @@ def create_yarn():
         length = int(request.form["length"])
         needle_size = float(request.form["needle_size"])
         fibre_type = request.form["fibre_type"]
-        buy_cost = int(request.form["buy_cost"].replace(".", ""))
-        sell_price = int(request.form["sell_price"].replace(".", ""))
+        buy_cost = int(request.form.get("buy_cost", type=float) * 100)
+        sell_price = int(request.form.get("buy_cost", type=float) * 100)
 
         image = request.files["image"]
         Yarn.save_image(image)
