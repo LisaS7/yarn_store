@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 nav {
     background-color: var(--mid);
     padding: 2rem;
@@ -6,7 +8,7 @@ nav {
 
 #nav-title {
     color: var(--light1);
-    font-weight: 700;
+    font-family: 'Pacifico', cursive;
     border-bottom: 1px solid var(--mid3);
 }
 

@@ -5,6 +5,12 @@
   <h2 id="nav-title"><a href="/">Loops & Strings</a></h2>
   <ul>
     <li>
+      <a href="{{ url_for('manufacturers.manufacturers') }}"
+        ><span class="material-symbols-outlined"> factory </span>
+        Manufacturers</a
+      >
+    </li>
+    <li>
       <a href="{{ url_for('yarns.yarns') }}"
         ><img
           class="icon-image"
@@ -13,12 +19,7 @@
         />Yarns</a
       >
     </li>
-    <li>
-      <a href="{{ url_for('manufacturers.manufacturers') }}"
-        ><span class="material-symbols-outlined"> factory </span>
-        Manufacturers</a
-      >
-    </li>
+
     <li>
       <a href="{{ url_for('colours.colours') }}"
         ><span class="material-symbols-outlined"> palette </span>Yarn Colours</a
