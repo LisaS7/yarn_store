@@ -1,4 +1,6 @@
 @import "./style.css";
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 
 /* -------- LANDING PAGE -------- */
 
@@ -24,6 +26,7 @@
 
 .main-text h1 {
     color: var(--dark);
+    font-family: 'Pacifico', cursive;
 }
 
 .main-text h4 {
@@ -38,4 +41,7 @@ button {
     background-color: var(--dark);
     color: var(--light1);
     font-weight: 600;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 0.25rem;
+
 }
