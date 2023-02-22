@@ -74,11 +74,6 @@ class TestYarn(unittest.TestCase):
         actual = self.yarn.id
         self.assertEqual(expected, actual)
 
-    def test_yarn_total_cost(self):
-        expected = 3750
-        actual = self.yarn.total_cost(5)
-        self.assertEqual(expected, actual)
-
     def test_yarn_default_image(self):
         expected = "none.jpeg"
         new_yarn = Yarn(

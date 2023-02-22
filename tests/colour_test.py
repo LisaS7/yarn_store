@@ -37,3 +37,8 @@ class TestColour(unittest.TestCase):
         self.colour.increase_stock(5)
         actual = self.colour.stock_quantity
         self.assertEqual(expected, actual)
+
+    def test_total_cost(self):
+        expected = 3750
+        actual = self.colour.total_cost(5)
+        self.assertEqual(expected, actual)

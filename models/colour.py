@@ -17,3 +17,6 @@ class Colour:
 
     def increase_stock(self, quantity):
         self.stock_quantity += quantity
+
+    def total_cost(self, quantity):
+        return quantity * self.yarn.buy_cost
