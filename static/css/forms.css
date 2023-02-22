@@ -32,7 +32,11 @@ select {
 }
 
 .submit-button button {
-    padding: 0.5rem;
+    padding: 0.7rem;
+    white-space: nowrap; 
+    background-color: var(--mid1);
+    color: var(--light2);
+    border-radius: 5px;
 }
 
 .order-stock > input {
