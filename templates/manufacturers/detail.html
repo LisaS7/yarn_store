@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <section>
-  <aside class="details-card p1">
+  <aside class="details-card p1 dark-border">
     <h2>{{ manufacturer.name }}</h2>
     <div id="details-mfr" class="details-content p1">
         <p>Last paid:
@@ -9,9 +9,17 @@
       <p>Balance to pay:
         <h4>{{ manufacturer.format_currency_balance() }}</h4></p>
     </div>
-    <div class="details-mfr"><h3>Yarns:</h3>
+    <h3>Yarns:</h3>
+    <div id="details-mfr-yarns" class="details-content p1">
       {% for yarn in yarns %}
+      <a href="{{ url_for('yarns.detail', id=yarn.id) }}">
+        <img
+        class="icon-image"
+        src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
+        alt="yarn icon"/>
         {{yarn.name}}
+      </a>
+        
       {% endfor %}
     
     </div>

@@ -1,10 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
 <section>
-  <aside class="details-card p1">
+  <aside class="details-card p1 dark-border">
     <h2>{{yarn.manufacturer.name}} - {{ yarn.name }}</h2>
     <section class="details-content p1">
       <img
+        class="yarn-product-img"
         src="{{ url_for('static', filename='/images/yarns/' + yarn.image) }}"
         alt="yarn product image"
       />

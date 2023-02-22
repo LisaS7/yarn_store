@@ -18,7 +18,7 @@ class Yarn:
     id: Optional[int] = None
 
     def __post_init__(self):
-        self.profit = round(self.sell_price - self.buy_cost, 2)
+        self.profit = self.sell_price - self.buy_cost
 
     @staticmethod
     def save_image(image):

@@ -54,6 +54,11 @@ h1 {
     gap: 1rem;
 }
 
+.dark-border {
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+}
+
 /* -------- FLASH MESSAGES -------- */
 
 .flashes {
@@ -94,12 +99,10 @@ footer a {
 /* -------- DETAILS CARDS -------- */
 
 .details-card {
-    border: 1px solid var(--dark);
     margin: 3rem;
     box-shadow: 0.3rem 0.3rem 1rem 0.5rem #5c5c5c3c;
     background-color: var(--light2);
     color: var(--dark);
-    border-radius: 5px;
 }
 
 .details-content {
@@ -111,9 +114,15 @@ footer a {
 
 #details-mfr {
     align-items: flex-end;
+    margin-left: 1rem;
 }
 
-.details-content img {
+#details-mfr-yarns {
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.yarn-product-img {
     align-self: flex-start;
     width: 10rem;
     border-radius: 5px;

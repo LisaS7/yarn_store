@@ -35,7 +35,3 @@ select {
     height: 1.5rem;
     width: 3rem;
 }
-
-#plus-stock {
-    border: 1px solid var(--mid3);
-}
