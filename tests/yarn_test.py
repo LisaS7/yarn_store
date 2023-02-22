@@ -68,24 +68,31 @@ class TestYarn(unittest.TestCase):
         actual = self.yarn.profit
         self.assertEqual(expected, actual)
 
-    def test_yarn_has_image(self):
-        expected = "test_image.jpeg"
-        actual = self.yarn.image
-        self.assertEqual(expected, actual)
-
     def test_yarn_has_id(self):
         expected = 7
         actual = self.yarn.id
         self.assertEqual(expected, actual)
 
+    def test_yarn_default_image(self):
+        expected = "none.jpeg"
+        actual = self.yarn.image
+        self.assertEqual(expected, actual)
+
     def test_save_image(self):
         test_image_location = Path.cwd() / "tests" / "test_image.jpeg"
-
         with open(test_image_location, "rb") as f:
             image = FileStorage(f)
             image.filename = "test_image.jpeg"
             self.yarn.save_image(image)
         self.assertTrue(filecmp.cmp(test_image_location, self.saved_image_location))
+        self.assertEqual(image.filename, self.yarn.image)
+
+    def test_no_image(self):
+        no_image = FileStorage()
+        self.yarn.save_image(no_image)
+        expected = "none.jpeg"
+        actual = self.yarn.image
+        self.assertEqual(expected, actual)
 
     def test_format_currency(self):
         expected = "£7.50"

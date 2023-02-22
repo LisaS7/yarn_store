@@ -25,6 +25,7 @@ class Yarn:
             self.image = "none.jpeg"
         else:
             image.save("./static/images/yarns/" + image.filename)
+            self.image = image.filename
 
     @staticmethod
     def format_currency(value):

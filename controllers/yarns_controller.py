@@ -47,6 +47,7 @@ def create_yarn():
         image = request.files["image"]
         new_yarn.save_image(image)
         yarn_repository.save(new_yarn)
+
         flash("Yarn added")
         return redirect("/yarns/")
 
@@ -76,9 +77,6 @@ def edit_yarn(id):
         buy_cost = int(request.form["buy_cost"].replace(".", ""))
         sell_price = int(request.form["sell_price"].replace(".", ""))
 
-        image = request.files["image"]
-        Yarn.save_image(image)
-
         yarn = Yarn(
             name,
             manufacturer,
@@ -89,14 +87,18 @@ def edit_yarn(id):
             fibre_type,
             buy_cost,
             sell_price,
-            image.filename,
-            id,
+            id=id,
         )
+
+        yarn.save_image(request.files["image"])
         yarn_repository.update(yarn)
+
         flash("Yarn updated")
         return redirect("/yarns/" + id)
+
     yarn = yarn_repository.select(id)
     manufacturers = manufacturer_repository.select_all()
+
     return render_template(
         "/yarns/edit.html",
         yarn=yarn,
