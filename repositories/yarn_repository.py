@@ -10,7 +10,7 @@ placeholders = ", ".join(["%s"] * number_of_fields)
 def select_all():
     yarns = []
 
-    sql = f"SELECT * FROM {TABLE_NAME}"
+    sql = f"SELECT * FROM {TABLE_NAME} ORDER BY name"
     results = run_sql(sql)
 
     for row in results:
@@ -105,7 +105,7 @@ def update(yarn):
 
 def select_by_manufacturer(mfr_id):
     yarns = []
-    sql = f"SELECT * FROM {TABLE_NAME} WHERE manufacturer_id = %s"
+    sql = f"SELECT * FROM {TABLE_NAME} WHERE manufacturer_id = %s ORDER BY name"
     values = [mfr_id]
     results = run_sql(sql, values)
 

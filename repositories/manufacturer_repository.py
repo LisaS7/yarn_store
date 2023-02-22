@@ -9,7 +9,7 @@ placeholders = ", ".join(["%s"] * number_of_fields)
 def select_all():
     manufacturers = []
 
-    sql = f"SELECT * FROM {TABLE_NAME}"
+    sql = f"SELECT * FROM {TABLE_NAME} ORDER BY name"
     results = run_sql(sql)
 
     for row in results:

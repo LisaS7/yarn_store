@@ -27,7 +27,7 @@ def select_all():
 
 
 def select(id):
-    sql = f"SELECT * FROM {TABLE_NAME} WHERE id = %s"
+    sql = f"SELECT * FROM {TABLE_NAME} WHERE id = %s ORDER BY name"
     values = [id]
     result = run_sql(sql, values)[0]
 
@@ -75,7 +75,7 @@ def update(colour):
 
 
 def select_by_yarn(yarn_id):
-    sql = f"SELECT * FROM colours WHERE yarn_id = %s"
+    sql = f"SELECT * FROM {TABLE_NAME} WHERE yarn_id = %s ORDER BY name"
     values = [yarn_id]
     result = run_sql(sql, values)
     return result
