@@ -111,10 +111,14 @@ def edit_yarn(id):
 def order_stock(colour_id):
     if request.method == "POST":
         colour = colour_repository.select(colour_id)
+
         quantity = int(request.form["quantity"])
-        cost = quantity * colour.yarn.buy_cost
+        cost = colour.yarn.total_cost(quantity)
+
         colour.yarn.manufacturer.add_to_balance(cost)
         colour.increase_stock(quantity)
+
         colour_repository.update(colour)
         manufacturer_repository.update(colour.yarn.manufacturer)
+
     return redirect(request.referrer)
