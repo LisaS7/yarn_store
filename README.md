@@ -56,19 +56,31 @@ It must NOT use:
 
 # Running Instructions
 
-1. Clone git repository
+1. Clone and enter git repository
+
+```
+cd yarn_store
+```
+
 2. Create and activate a virtual environment inside the cloned repository
 
 ```
-  cd yarn_store
-  python3 -m venv venv
-  source venv/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 3. Install from requirements.txt
 
 ```
 pip install -r requirements.txt
+```
+
+4. Create database
+
+```
+createdb yarn_store
+psql -d yarn_store -f db/yarn_store.sql
+
 ```
 
 4. Run the app with flask
