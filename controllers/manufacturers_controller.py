@@ -32,8 +32,9 @@ def create_manufacturer():
         )
 
         new_manufacturer = Manufacturer(name, last_payment_date, balance_due)
-        flash("Manufacturer added")
         manufacturer_repository.save(new_manufacturer)
+
+        flash("Manufacturer added")
         return redirect("/manufacturers/")
     return render_template("/manufacturers/new.html")
 
