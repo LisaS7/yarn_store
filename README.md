@@ -80,4 +80,4 @@ View details for all yarns.
 ![All Yarns View](screenshots/all_yarns.png?raw=true "All Yarns")
 
 View colours, including stock level warning indicators. Order more stock.
-![All Yarns View](screenshots/all_yarns.png?raw=true "All Yarns")
+![All Yarns View](screenshots/all_colours.png?raw=true "All Yarns")
