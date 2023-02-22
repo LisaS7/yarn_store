@@ -7,7 +7,7 @@
     enctype="multipart/form-data"
   >
     <label for="name">Name: </label>
-    <input type="text" id="name" name="name" />
+    <input type="text" id="name" name="name" required />
     <label for="manufacturer">Manufacturer: </label>
     <select name="manufacturer" id="manufacturer">
       {% for manufacturer in manufacturers %}
@@ -23,10 +23,17 @@
     </select>
 
     <label for="ball_weight">Ball Weight (grams): </label>
-    <input type="number" min="0" id="ball_weight" name="ball_weight" />
+    <input
+      type="number"
+      min="0"
+      id="ball_weight"
+      name="ball_weight"
+      value="100"
+      required
+    />
 
     <label for="length">Length (metres): </label>
-    <input type="number" min="0" id="length" name="length" />
+    <input type="number" min="0" id="length" name="length" required />
 
     <label for="needle_size">Needle Size (mm): </label>
     <input
@@ -35,13 +42,21 @@
       step="0.5"
       id="needle_size"
       name="needle_size"
+      required
     />
 
     <label for="fibre_type">Fibre Type: </label>
     <input type="text" id="fibre_type" name="fibre_type" />
 
     <label for="buy_cost">Buy Cost: </label>
-    <input type="number" min="0" step="0.01" id="buy_cost" name="buy_cost" />
+    <input
+      type="number"
+      min="0"
+      step="0.01"
+      id="buy_cost"
+      name="buy_cost"
+      required
+    />
 
     <label for="sell_price">Sell Price: </label>
     <input
@@ -50,6 +65,7 @@
       step="0.01"
       id="sell_price"
       name="sell_price"
+      required
     />
 
     <label for="image">Image: </label>

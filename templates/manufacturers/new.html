@@ -7,9 +7,14 @@
     enctype="multipart/form-data"
   >
     <label for="name">Name: </label>
-    <input type="text" id="name" name="name" />
+    <input type="text" id="name" name="name" required />
     <label for="last_payment_date">Last payment date: </label>
-    <input type="date" id="last_payment_date" name="last_payment_date" />
+    <input
+      type="date"
+      id="last_payment_date"
+      name="last_payment_date"
+      required
+    />
     <label for="balance_due">Outstanding Balance: </label>
     <input
       type="number"
@@ -17,6 +22,7 @@
       step="0.01"
       id="balance_due"
       name="balance_due"
+      required
     />
 
     <div class="submit-button"><button type="submit">Submit</button></div>

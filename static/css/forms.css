@@ -28,6 +28,11 @@ select {
 
 .submit-button {
     margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.submit-button button {
+    padding: 0.5rem;
 }
 
 .order-stock > input {

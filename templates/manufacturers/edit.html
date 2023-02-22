@@ -7,15 +7,22 @@
     enctype="multipart/form-data"
   >
     <label for="title">Name: </label>
-    <input type="text" id="name" name="name" value="{{ manufacturer.name }}" />
+    <input
+      type="text"
+      id="name"
+      name="name"
+      value="{{ manufacturer.name }}"
+      required
+    />
     <label for="author">Last payment date: </label>
     <input
       type="date"
       id="last_payment_date"
       name="last_payment_date"
       value="{{ manufacturer.last_payment_date }}"
+      required
     />
-    <label for="genre">Outstanding Balance: </label>
+    <label for="balance_due">Outstanding Balance: </label>
     <input
       type="number"
       min="0"
@@ -23,6 +30,7 @@
       id="balance_due"
       name="balance_due"
       value="{{ manufacturer.format_currency_balance()[1:] }}"
+      required
     />
 
     <div class="submit-button"><button type="submit">Submit</button></div>
