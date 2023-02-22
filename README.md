@@ -73,3 +73,11 @@ pip install -r requirements.txt
 ```
 flask run
 ```
+
+# Screenshots
+
+View details for all yarns.
+![All Yarns View](screenshots/all_yarns.png?raw=true "All Yarns")
+
+View colours, including stock level warning indicators. Order more stock.
+![All Yarns View](screenshots/all_yarns.png?raw=true "All Yarns")
