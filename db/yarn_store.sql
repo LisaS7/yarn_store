@@ -29,5 +29,5 @@ CREATE TABLE colours (
     name VARCHAR(255),
     hex_code VARCHAR(8),
     stock_quantity INT,
-    yarn_id INT REFERENCES yarns(id)
+    yarn_id INT REFERENCES yarns(id) ON DELETE CASCADE
 );
