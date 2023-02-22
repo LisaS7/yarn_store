@@ -32,9 +32,6 @@ def create_yarn():
         buy_cost = int(request.form.get("buy_cost", type=float) * 100)
         sell_price = int(request.form.get("buy_cost", type=float) * 100)
 
-        image = request.files["image"]
-        Yarn.save_image(image)
-
         new_yarn = Yarn(
             name,
             manufacturer,
@@ -45,8 +42,10 @@ def create_yarn():
             fibre_type,
             buy_cost,
             sell_price,
-            image.filename,
         )
+
+        image = request.files["image"]
+        new_yarn.save_image(image)
         yarn_repository.save(new_yarn)
         flash("Yarn added")
         return redirect("/yarns/")

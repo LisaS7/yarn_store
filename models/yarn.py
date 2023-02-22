@@ -20,10 +20,9 @@ class Yarn:
     def __post_init__(self):
         self.profit = self.sell_price - self.buy_cost
 
-    @staticmethod
-    def save_image(image):
-        if not image:
-            image = "none.jpeg"
+    def save_image(self, image):
+        if not image.filename:
+            self.image = "none.jpeg"
         else:
             image.save("./static/images/yarns/" + image.filename)
 
