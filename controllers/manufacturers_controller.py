@@ -26,7 +26,7 @@ def detail(id):
 def create_manufacturer():
     if request.method == "POST":
         name = request.form["name"]
-        balance_due = int(request.form["balance_due"].replace(".", ""))
+        balance_due = int(request.form.get("balance_due", type=float) * 100)
         last_payment_date = Manufacturer.form_date_to_datetime(
             request.form["last_payment_date"]
         )
