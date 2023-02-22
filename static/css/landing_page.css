@@ -6,22 +6,23 @@
 
 .index-page {
     padding: 3rem;
+    background-color: var(--light1);
 }
 
 .index-page section {
+    margin: 7rem 10rem;
     display: flex;
     justify-content: space-around;
     gap: 3rem;
 }
 
 .index-page img {
-    width: 50%;
+    width: 60%;
     border-radius: 15px 50px;
 }
 
 .main-text {
-    margin-top: 3rem;
-    margin-left: 3rem;
+    margin-top: 1rem;
 }
 
 .main-text h1 {
