@@ -20,6 +20,9 @@ class Yarn:
     def __post_init__(self):
         self.profit = self.sell_price - self.buy_cost
 
+    def total_cost(self, quantity):
+        return quantity * self.buy_cost
+
     def save_image(self, image):
         if not image.filename:
             self.image = "none.jpeg"
