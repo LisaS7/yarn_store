@@ -4,6 +4,7 @@
 2. [Rules](#rules)
 3. [Technologies Used](#technologies-used)
 4. [Running Instructions](#running-instructions)
+5. [Screenshots](#screenshots)
    <br>
    <br>
 
@@ -88,5 +89,5 @@ View all yarns.<br>
 View full details, edit or delete yarn, and add new colours.
 ![Yarn Details View](screenshots/yarn_details.png?raw=true "Yarn Details")
 <br><br><br>
-View colours, including stock level warning indicators. Order more stock. Add, edit and delete colours"
+View colours, including stock level warning indicators. Order more stock. Add, edit and delete colours.
 ![All Colours View](screenshots/all_colours.png?raw=true "All Colours")
