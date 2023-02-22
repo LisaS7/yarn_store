@@ -70,7 +70,18 @@
               </span>
               {{colour.name}}
             </td>
-            <td>{{colour.stock_quantity}}</td>
+            <td>
+              {{colour.stock_quantity}} {% if colour.low_stock and
+              colour.stock_quantity > 0 %}
+              <span class="material-symbols-outlined stock-low-icon">
+                warning
+              </span>
+              {% endif %} {% if colour.stock_quantity == 0 %}
+              <span class="material-symbols-outlined stock-zero-icon">
+                warning
+              </span>
+              {% endif %}
+            </td>
             <td>{% include '/components/order_stock.html' %}</td>
           </tr>
           {% endfor %}

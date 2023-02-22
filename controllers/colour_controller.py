@@ -23,7 +23,6 @@ def colours():
 @colours_blueprint.route("/new/", methods=["GET", "POST"])
 @colours_blueprint.route("/new/<yarn_id>", methods=["GET", "POST"])
 def create_colour(yarn_id):
-
     yarn = yarn_repository.select(yarn_id)
 
     if request.method == "POST":

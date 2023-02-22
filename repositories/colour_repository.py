@@ -75,7 +75,19 @@ def update(colour):
 
 
 def select_by_yarn(yarn_id):
+    colours = []
     sql = f"SELECT * FROM {TABLE_NAME} WHERE yarn_id = %s ORDER BY name"
     values = [yarn_id]
-    result = run_sql(sql, values)
-    return result
+    results = run_sql(sql, values)
+
+    for row in results:
+        yarn = yarn_repository.select(row["yarn_id"])
+        colour = Colour(
+            row["name"],
+            row["hex_code"],
+            row["stock_quantity"],
+            yarn,
+            row["id"],
+        )
+        colours.append(colour)
+    return colours
