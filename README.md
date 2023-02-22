@@ -33,7 +33,7 @@ eBay, Amazon (back end only), Magento
 - Categorise your items. Books might be categorised by genre (crime, horror, romance...) and cars might be categorised by type (SUV, coupé, hatchback...). Provide an option to filter the inventory list by these categories.
 - Mark manufacturers as active/deactivated. Deactivated manufacturers will not appear when creating new products.
 
-&nbsp;
+<br><br><br>
 
 # Rules
 
@@ -43,6 +43,7 @@ It must NOT use:
 - JavaScript. At all. Don't even think about it.
 - Any pre-built CSS libraries, such as Bootstrap.
 - Authentication. Assume that the user already has secure access to the app.
+  <br><br><br>
 
 # Technologies Used
 
@@ -50,6 +51,7 @@ It must NOT use:
 - Python
 - Flask
 - PostgreSQL and the psycopg
+  <br><br><br>
 
 # Running Instructions
 
@@ -74,10 +76,17 @@ pip install -r requirements.txt
 flask run
 ```
 
+<br><br><br>
+
 # Screenshots
 
-View details for all yarns.
-![All Yarns View](screenshots/all_yarns.png?raw=true "All Yarns")
+&nbsp;
 
-View colours, including stock level warning indicators. Order more stock.
-![All Yarns View](screenshots/all_colours.png?raw=true "All Yarns")
+View all yarns.<br>
+![All Yarns View](screenshots/all_yarns.png?raw=true "All Yarns")
+<br><br><br>
+View full details, edit or delete yarn, and add new colours.
+![Yarn Details View](screenshots/yarn_details.png?raw=true "Yarn Details")
+<br><br><br>
+View colours, including stock level warning indicators. Order more stock. Add, edit and delete colours"
+![All Colours View](screenshots/all_colours.png?raw=true "All Colours")
