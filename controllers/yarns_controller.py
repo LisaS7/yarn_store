@@ -89,8 +89,11 @@ def edit_yarn(id):
             sell_price,
             id=id,
         )
-
-        yarn.save_image(request.files["image"])
+        image = request.files["image"]
+        if image:
+            yarn.save_image(image)
+        else:
+            yarn.image = request.form["original_image"]
         yarn_repository.update(yarn)
 
         flash("Yarn updated")

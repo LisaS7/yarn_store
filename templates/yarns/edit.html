@@ -51,6 +51,7 @@
     <label for="image">Image: </label>
     <img src="{{ url_for('static', filename='/images/yarns/' + yarn.image) }}" alt="yarn product image">
     <input type="file" id="image" name="image" value="{{yarn.image}}"/>
+    <input type="hidden" id="original_image" name="original_image" value="{{yarn.image}}">
 
     <div class="submit-button"><button type="submit">Submit</button></div>
   </form>
