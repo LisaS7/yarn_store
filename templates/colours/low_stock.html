@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block content %}
+<header>
+  <h2>Low Stock</h2>
+</header>
+<table class="colour-table colour-dots">
+    <thead>
+      <tr>
+        <th>Yarn</th>
+        <th>Colour</th>
+        <th>Quantity</th>
+        <th>Price Per Unit</th>
+        <th>Order</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+{% for colour in low_stock %}
+
+  
+    <tr>
+      <td>{{colour.yarn.manufacturer.name}} - {{colour.yarn.name}}</td>
+      <td>
+        <span
+          class="material-symbols-outlined colour-dots"
+          style="color: {{colour.hex_code}}"
+        >
+          circle
+        </span>
+        {{colour.name}}
+      </td>
+    </td>
+    <td>{{colour.stock_quantity}}</td>
+    <td>{{colour.yarn.format_currency(colour.yarn.buy_cost)}}</td>
+    <td>
+      {% include '/components/order_stock.html' %}
+
+    </td>
+    <td>
+      <a href="{{ url_for('colours.edit_colour', id=colour.id) }}"><span class="material-symbols-outlined"> edit </span></a>
+    </td>
+    <td>
+      <a href="{{ url_for('colours.delete', id=colour.id) }}"><span class="material-symbols-outlined"> close </span></a>
+    </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+{% endblock content %}

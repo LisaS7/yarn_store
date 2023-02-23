@@ -53,7 +53,7 @@ cascade_yarn1 = Yarn(
     400,
     3.25,
     "75% wool, 25% nylon",
-    760,
+    720,
     899,
     "cascade_heritage.jpeg",
 )
@@ -65,7 +65,7 @@ cascade_yarn2 = Yarn(
     200,
     5.5,
     "70% cotton, 30% wool",
-    720,
+    620,
     899,
     "cascade_cantata.jpeg",
 )
@@ -77,7 +77,7 @@ cascade_yarn3 = Yarn(
     200,
     4.5,
     "100% wool",
-    850,
+    650,
     899,
     "cascade_superwash.jpeg",
 )

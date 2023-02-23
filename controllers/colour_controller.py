@@ -62,3 +62,10 @@ def edit_colour(id):
     colour = colour_repository.select(id)
     yarns = yarn_repository.select_all()
     return render_template("/colours/edit.html", colour=colour, yarns=yarns)
+
+
+@colours_blueprint.route("/low-stock")
+def low_stock():
+    all_colours = colour_repository.select_all()
+    low_stock = [colour for colour in all_colours if colour.stock_quantity < 10]
+    return render_template("/colours/low_stock.html", low_stock=low_stock)
