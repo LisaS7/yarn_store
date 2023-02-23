@@ -18,7 +18,8 @@ class Yarn:
     id: Optional[int] = None
 
     def __post_init__(self):
-        self.profit = self.sell_price - self.buy_cost
+        profit = (self.sell_price - self.buy_cost) / self.buy_cost
+        self.margin = "{0:.0%}".format(profit)
 
     def save_image(self, image):
         if not image.filename:

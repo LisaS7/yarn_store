@@ -64,9 +64,9 @@ class TestYarn(unittest.TestCase):
         actual = self.yarn.sell_price
         self.assertEqual(expected, actual)
 
-    def test_yarn_has_profit(self):
-        expected = 249
-        actual = self.yarn.profit
+    def test_yarn_has_profit_margin(self):
+        expected = "33%"
+        actual = self.yarn.margin
         self.assertEqual(expected, actual)
 
     def test_yarn_has_id(self):
