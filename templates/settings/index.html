@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %} {% set low_stock =
+context["low_stock"] %} {% set yarn_weights = context["yarn_weights"] %}
+<header>
+  <h2>Settings</h2>
+</header>
+<section class="details-content p1">
+  <form
+    action="{{ url_for('settings.settings') }}"
+    method="post"
+    enctype="application/json"
+  >
+    <fieldset class="flex-col flex-gap-1">
+      <legend>Stock</legend>
+      <label for="low-stock">Low stock warning threshold:</label
+      ><input
+        type="number"
+        min="0"
+        step="1"
+        name="low_stock_threshold"
+        value="{{low_stock}}"
+      />
+    </fieldset>
+    <fieldset class="flex-col flex-gap-1">
+      <legend>Yarn Weights</legend>
+      <label for="yarn-weight">Input yarn weights:</label>
+      {% for weight in yarn_weights %}
+      <input
+        type="text"
+        value="{{weight}}"
+        name="yarn_weight_{{loop.index0}}"
+      />
+      {% endfor %}
+      <input type="text" name="yarn_weight_{{yarn_weights|length}}" />
+      <input type="text" name="yarn_weight_{{yarn_weights|length + 1}}" />
+      <input type="text" name="yarn_weight_{{yarn_weights|length + 2}}" />
+    </fieldset>
+
+    <div class="submit-button">
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</section>
+{% endblock content %}

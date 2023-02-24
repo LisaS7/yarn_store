@@ -26,6 +26,10 @@ select {
     padding: 0.7rem;
 }
 
+fieldset {
+    padding: 2rem;
+}
+
 .submit-button {
     margin-top: 2rem;
     margin-left: 2rem;

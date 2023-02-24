@@ -2,32 +2,42 @@
 <link rel="stylesheet" href="/static/css/navbar.css" />
 {% endblock head %}
 <nav>
-  <h2 id="nav-title"><a href="/">Loops & Strings</a></h2>
+  <section>
+    <h2 id="nav-title"><a href="/">Loops & Strings</a></h2>
+    <ul>
+      <li>
+        <a href="{{ url_for('manufacturers.manufacturers') }}"
+          ><span class="material-symbols-outlined"> factory </span>
+          Manufacturers</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('yarns.yarns') }}"
+          ><img
+            class="icon-image"
+            src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
+            alt="yarn icon"
+          />Yarns</a
+        >
+      </li>
+
+      <li>
+        <a href="{{ url_for('colours.colours') }}"
+          ><span class="material-symbols-outlined"> palette </span>Yarn
+          Colours</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('colours.low_stock') }}"
+          ><span class="material-symbols-outlined"> warning </span>Low Stock</a
+        >
+      </li>
+    </ul>
+  </section>
   <ul>
     <li>
-      <a href="{{ url_for('manufacturers.manufacturers') }}"
-        ><span class="material-symbols-outlined"> factory </span>
-        Manufacturers</a
-      >
-    </li>
-    <li>
-      <a href="{{ url_for('yarns.yarns') }}"
-        ><img
-          class="icon-image"
-          src="{{ url_for('static', filename='/images/icons/yarn_ball.png') }}"
-          alt="yarn icon"
-        />Yarns</a
-      >
-    </li>
-
-    <li>
-      <a href="{{ url_for('colours.colours') }}"
-        ><span class="material-symbols-outlined"> palette </span>Yarn Colours</a
-      >
-    </li>
-    <li>
-      <a href="{{ url_for('colours.low_stock') }}"
-        ><span class="material-symbols-outlined"> warning </span>Low Stock</a
+      <a href="{{ url_for('settings.settings') }}"
+        ><span class="material-symbols-outlined"> settings </span>Settings</a
       >
     </li>
   </ul>
