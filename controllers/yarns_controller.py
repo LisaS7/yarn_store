@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, flash
 from repositories import yarn_repository, manufacturer_repository, colour_repository
 from models.yarn import Yarn
-from config import yarn_weights
+from config.config import config
 
 yarns_blueprint = Blueprint("yarns", __name__, url_prefix="/yarns")
 
@@ -108,7 +108,7 @@ def edit_yarn(id):
         "/yarns/edit.html",
         yarn=yarn,
         manufacturers=manufacturers,
-        yarn_weights=yarn_weights,
+        yarn_weights=config.user_data["yarn_weights"],
     )
 
 

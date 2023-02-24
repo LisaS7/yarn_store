@@ -1,11 +1,10 @@
 from db.run_sql import run_sql
 from models.yarn import Yarn
 from repositories import manufacturer_repository
-from helper_functions.json_functions import read_db_config
+from config.config import config
 
-config = read_db_config()["yarns"]
-TABLE_NAME = config["table_name"]
-FIELDS = config["fields"]
+TABLE_NAME = config.db_data["yarns"]["table_name"]
+FIELDS = config.db_data["yarns"]["fields"]
 
 number_of_fields = len(FIELDS.split(","))
 placeholders = ", ".join(["%s"] * number_of_fields)

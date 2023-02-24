@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from helper_functions.json_functions import read_user_config, write_user_config
+from config.config import config
 
 settings_blueprint = Blueprint("settings", __name__, url_prefix="/settings")
 
@@ -20,11 +20,11 @@ def settings():
             "yarn_weights": yarn_weights,
         }
 
-        write_user_config(data)
-
-    data = read_user_config()
+        config.write_user_config(data)
+        config.read_user_config()
+    config.read_user_config()
     context = {
-        "low_stock": data["low_stock_threshold"],
-        "yarn_weights": data["yarn_weights"],
+        "low_stock": config.user_data["low_stock_threshold"],
+        "yarn_weights": config.user_data["yarn_weights"],
     }
     return render_template("/settings/index.html", context=context)

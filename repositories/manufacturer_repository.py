@@ -1,11 +1,10 @@
 from db.run_sql import run_sql
 from models.manufacturer import Manufacturer
 
-from helper_functions.json_functions import read_db_config
+from config.config import config
 
-config = read_db_config()["manufacturers"]
-TABLE_NAME = config["table_name"]
-FIELDS = config["fields"]
+TABLE_NAME = config.db_data["manufacturers"]["table_name"]
+FIELDS = config.db_data["manufacturers"]["fields"]
 
 number_of_fields = len(FIELDS.split(","))
 placeholders = ", ".join(["%s"] * number_of_fields)

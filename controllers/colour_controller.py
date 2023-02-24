@@ -2,6 +2,7 @@ from collections import defaultdict
 from flask import Blueprint, render_template, request, redirect, flash
 from repositories import colour_repository, yarn_repository
 from models.colour import Colour
+from config.config import config
 
 colours_blueprint = Blueprint("colours", __name__, url_prefix="/colours")
 
@@ -67,5 +68,9 @@ def edit_colour(id):
 @colours_blueprint.route("/low-stock")
 def low_stock():
     all_colours = colour_repository.select_all()
-    low_stock = [colour for colour in all_colours if colour.stock_quantity < 10]
+    low_stock = [
+        colour
+        for colour in all_colours
+        if colour.stock_quantity < config.low_stock_threshold
+    ]
     return render_template("/colours/low_stock.html", low_stock=low_stock)

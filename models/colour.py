@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional
 from models.yarn import Yarn
-from config import stock_low_threshold
+from config.config import config
 
 
 @dataclass
@@ -12,8 +12,9 @@ class Colour:
     yarn: Yarn
     id: Optional[int] = None
 
-    def __post_init__(self):
-        self.low_stock = self.stock_quantity < stock_low_threshold
+    def low_stock(self):
+        config.get_stock_threshold()
+        return self.stock_quantity < config.low_stock_threshold
 
     def increase_stock(self, quantity):
         self.stock_quantity += quantity
