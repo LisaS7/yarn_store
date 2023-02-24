@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: var(--mid);
     padding: 2rem;
     min-width: 10rem;
@@ -25,8 +28,6 @@ nav a:hover {
 }
 
 nav ul {
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
     padding: 0;
 }
@@ -40,4 +41,3 @@ nav span.material-symbols-outlined {
     color: #e3a3ac;
     font-size: 2rem;
 }
-

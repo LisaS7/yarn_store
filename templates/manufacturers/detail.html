@@ -3,14 +3,14 @@
 <section>
   <aside class="details-card p1 dark-border">
     <h2>{{ manufacturer.name }}</h2>
-    <div id="details-mfr" class="details-content p1">
+    <div id="details-mfr" class="details-content p1 border-tb">
         <p>Last paid:
             <h4>{{ manufacturer.format_date_for_view() }}</h4></p>
       <p>Balance to pay:
         <h4>{{ manufacturer.format_currency_balance() }}</h4></p>
     </div>
     <h3>Yarns:</h3>
-    <div id="details-mfr-yarns" class="details-content p1">
+    <div id="details-mfr-yarns" class="details-content p1 border-tb">
       {% for yarn in yarns %}
       <a href="{{ url_for('yarns.detail', id=yarn.id) }}">
         <img

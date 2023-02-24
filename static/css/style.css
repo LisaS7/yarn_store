@@ -59,6 +59,11 @@ h1 {
     border-radius: 5px;
 }
 
+.border-tb {
+    border-top: 1px solid var(--dark2);
+    border-bottom: 1px solid var(--dark2);
+}
+
 /* -------- FLASH MESSAGES -------- */
 
 .flashes {
@@ -109,8 +114,7 @@ footer a {
 .details-content {
     display: flex;
     gap: 1.5rem;
-    border-top: 1px solid var(--dark2);
-    border-bottom: 1px solid var(--dark2);
+    
 }
 
 #details-mfr {
