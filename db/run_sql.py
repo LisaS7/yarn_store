@@ -1,6 +1,9 @@
 import psycopg2
 import psycopg2.extras as ext
-from config import db_name
+from helper_functions.json_functions import read_db_config
+
+config = read_db_config()
+db_name = config["db_name"]
 
 
 def run_sql(sql, values=None):

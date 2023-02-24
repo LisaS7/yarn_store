@@ -1,7 +1,12 @@
 from db.run_sql import run_sql
-from config import colours_table_name as TABLE_NAME, colours_fields as FIELDS
 from repositories import yarn_repository
 from models.colour import Colour
+
+from helper_functions.json_functions import read_db_config
+
+config = read_db_config()["colours"]
+TABLE_NAME = config["table_name"]
+FIELDS = config["fields"]
 
 number_of_fields = len(FIELDS.split(","))
 placeholders = ", ".join(["%s"] * number_of_fields)
